@@ -10,15 +10,16 @@
   *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:880px;margin:0 auto;padding:24px}
   .panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden}
-  header{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+  header{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px}
   header h1{margin:0;font-size:16px;color:#cbd5ff}
+  #status{color:var(--muted);font-size:12px}
   #messages{padding:16px;display:flex;flex-direction:column;gap:12px;min-height:360px}
   .msg{max-width:80%;padding:10px 12px;border-radius:12px;white-space:pre-wrap}
   .me{background:#18224a;align-self:flex-end}
   .bot{background:#121a39;border:1px solid var(--border)}
   .muted{color:var(--muted)}
   form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border)}
-  input,textarea{flex:1;border:1px solid var(--border);background:#0f1733;color:var(--text);border-radius:12px;padding:12px}
+  input{flex:1;border:1px solid var(--border);background:#0f1733;color:#e6e9f2;border-radius:12px;padding:12px}
   button{background:var(--primary);color:#fff;border:0;border-radius:12px;padding:12px 14px;cursor:pointer}
   /* typing indicator */
   .typing{display:inline-flex;gap:4px;align-items:center}
@@ -30,7 +31,10 @@
 <body>
 <div class="wrap">
   <div class="panel">
-    <header><h1>Tony</h1><span id="status" class="muted"></span></header>
+    <header>
+      <h1>Tony</h1>
+      <span id="status" class="muted">Checking service…</span>
+    </header>
     <div id="messages"></div>
     <form id="f">
       <input id="q" placeholder="Ask about my projects, dashboards, pivot, or goals…" autocomplete="off" />
@@ -38,18 +42,39 @@
     </form>
   </div>
 </div>
+
 <script type="module">
 const CONFIG = await fetch("./assets/chat/config.json").then(r=>r.json());
-const EP = CONFIG.endpoint;
+const ENDPOINT = CONFIG.endpoint;                 // e.g., https://...workers.dev/chat
+const ENDPOINT_STREAM = `${ENDPOINT}?stream=1`;   // streaming path
+
+// Derive /healthz from the same Worker origin
+const workerBase = new URL(ENDPOINT);
+workerBase.pathname = "/healthz";
+const HEALTHZ = workerBase.toString();
 
 const messagesEl = document.getElementById("messages");
 const statusEl = document.getElementById("status");
 const form = document.getElementById("f");
 const q = document.getElementById("q");
 
-// opening greeting bubble (from persona or config)
-addBotBubble(CONFIG.greeting_markdown?.replace(/^##\s*Greeting\s*/i,"") || 
-  "Hi. I'm here to help answer any questions you have about me, my background and goals, current projects, etc. What's on your mind?");
+// Opening greeting bubble (from persona or config)
+addBotBubble(
+  (CONFIG.greeting_markdown || "").replace(/^##\s*Greeting\s*/i,"") ||
+  "Hi. I'm here to help answer any questions you have about me, my background and goals, current projects, etc. What's on your mind?"
+);
+
+// Health check so “Not Found” on GET /chat doesn’t confuse us
+try {
+  const res = await fetch(HEALTHZ, { method:"GET" });
+  if (res.ok) {
+    statusEl.textContent = "Ready";
+  } else {
+    statusEl.textContent = `Health check failed (${res.status}). Ensure wrangler env vars and deploy.`;
+  }
+} catch (e) {
+  statusEl.textContent = `Health check error: ${e.message}`;
+}
 
 let aborter = null;
 
@@ -63,21 +88,19 @@ form.addEventListener("submit", async (e)=>{
 });
 
 async function sendChat(text){
-  // create assistant bubble with typing indicator
-  const bubble = addBotBubble("", true);
+  const bubble = addBotBubble("", true); // typing indicator
   const payload = { messages: [{ role:"user", content: text }] };
 
-  // kick non-stream in background (optional; you can remove if you only want streaming)
-  // show streamed response in real-time
   try {
-    await streamChat(`${EP}?stream=1`, payload, delta => {
+    await streamChat(ENDPOINT_STREAM, payload, delta => {
       bubble.textContent += delta;
       bubble.dataset.loading = "0";
     }, () => {
       bubble.dataset.loading = "0";
     });
   } catch (e) {
-    bubble.textContent = `Sorry—something went wrong: ${e.message}`;
+    bubble.textContent = `Sorry—request failed. ${e.message}`;
+    statusEl.textContent = "Error";
   }
 }
 
@@ -108,17 +131,25 @@ async function streamChat(endpoint, payload, onToken, onDone){
   if (aborter) aborter.abort();
   aborter = new AbortController();
   statusEl.textContent = "Streaming…";
+
   const res = await fetch(endpoint, {
     method:"POST",
     headers:{ "Content-Type":"application/json" },
     body: JSON.stringify(payload),
     signal: aborter.signal
   });
-  if (!res.ok || !res.body){ statusEl.textContent = "Error"; throw new Error(await res.text()); }
+
+  // Helpful errors
+  if (!res.ok || !res.body){
+    statusEl.textContent = `HTTP ${res.status}`;
+    const txt = await safeText(res);
+    throw new Error(txt || "No response body");
+  }
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
+
   while (true){
     const { done, value } = await reader.read();
     if (done) break;
@@ -138,6 +169,10 @@ async function streamChat(endpoint, payload, onToken, onDone){
   }
   statusEl.textContent = "";
   onDone?.();
+}
+
+async function safeText(res){
+  try { return await res.text(); } catch { return ""; }
 }
 </script>
 </body>
