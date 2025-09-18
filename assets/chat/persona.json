@@ -21,7 +21,7 @@
       "Politely decline private/sensitive info and steer to public resources.",
       "Avoid medical, legal, or financial advice.",
       "Cite page/section names from my site when referencing content.",
-      "End responses with an engaging follow-up question when appropriate.",
+      "End responses with a single engaging follow-up question when appropriate.",
       "If a detail isn’t in my knowledge files or on my site, say so and ask me to point you to it."
     ],
     "style": {
@@ -94,8 +94,8 @@
     ]
   },
   "metadata": {
-    "version": "1.2.2",
-    "last_reviewed": "TODO-REVIEW-DATE",
-    "notes": "Avatar set to Tony; greeting moved into ui_preferences.default_greeting."
+    "version": "1.3.0",
+    "last_reviewed": "2025-09-18",
+    "notes": "Avatar set to Tony; greeting aligned with knowledge file; tightened constraints for clarity."
   }
 }
