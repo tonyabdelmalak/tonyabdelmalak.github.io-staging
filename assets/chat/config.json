@@ -1,11 +1,10 @@
 {
   "proxyUrl": "https://my-chat-agent.tonyabdelmalak.workers.dev/chat",
-  "title": "Chat with Tony",
-  "greeting": "Hi — I’m Tony. Ask me about my projects, roles, or dashboards.",
-  "brand": { "accent": "#4f46e5", "radius": "12px" },
-  "rateLimit": 10,
-  "model": "llama3-8b-8192",
-  "intro_once": true,
-  "firstMessage": "Hey—I’m Tony. I turn workforce data into action. Want dashboards, resume, or portfolio?",
-  "systemPrompt": "Speak in first person as Tony. Be concise, confident, and pragmatic."
+  "title": "Tony",
+  "greeting_markdown": "## Greeting\nHi. I'm here to help answer any questions you have about me, my background and goals, current projects, etc. What's on your mind?",
+  "placeholder": "Ask about my projects, dashboards, pivot, or goals…",
+  "ui": {
+    "primaryColor": "#4f46e5",
+    "radius": 12
+  }
 }
