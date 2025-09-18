@@ -1,5 +1,5 @@
 {
-  "proxyUrl": "https://my-chat-agent.tonyabdelmalak.workers.dev/chat",
+  "endpoint": "https://my-chat-agent.tonyabdelmalak.workers.dev/chat",
   "title": "Tony",
   "greeting_markdown": "## Greeting\nHi. I'm here to help answer any questions you have about me, my background and goals, current projects, etc. What's on your mind?",
   "placeholder": "Ask about my projects, dashboards, pivot, or goals…",
