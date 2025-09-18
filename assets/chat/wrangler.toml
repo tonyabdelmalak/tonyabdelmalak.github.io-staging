@@ -2,26 +2,41 @@ name = "tony-agent"
 main = "chat-widget/worker.js"
 compatibility_date = "2025-01-01"
 
+# Defaults used if an env value isn't specified
+[vars]
+USE_KEYWORD_FILTER = "true"
+
+# ---------- STAGING (Reflectiv) ----------
 [env.staging]
-vars = { 
-  PERSONA_URL = "https://reflectivei.github.io/reflectiv-ai/assets/chat/persona.json",
+vars = {
+  # Public URLs to your staging persona/knowledge hosted on GitHub Pages:
+  PERSONA_URL   = "https://reflectivei.github.io/reflectiv-ai/assets/chat/persona.json",
   KNOWLEDGE_URL = "https://reflectivei.github.io/reflectiv-ai/assets/chat/knowledge/about-tony.md",
-  USE_KEYWORD_FILTER = "true",
-  ALLOWED_ORIGINS = "https://reflectivei.github.io/reflectiv-ai",
-  GROQ_URL = "https://api.groq.com/openai/v1/chat/completions",
+
+  # Only allow your Reflectiv staging site to call the Worker
+  ALLOWED_ORIGINS = "https://reflectivei.github.io",
+
+  # Groq API endpoint + model (pick your staging model)
+  GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
   GROQ_MODEL = "llama-3.1-70b-versatile"
 }
-# Set secret separately:
+# IMPORTANT: set the secret OUTSIDE the file:
 #   wrangler secret put GROQ_API_KEY --env staging
 
+# ---------- PRODUCTION (Main site) ----------
 [env.production]
-vars = { 
-  PERSONA_URL = "https://tonyabdelmalak.github.io/<main-repo>/assets/chat/persona.json",
+vars = {
+  # Public URLs to your production persona/knowledge on your main site repo
+  # Example: if your main site is https://tonyabdelmalak.github.io/tony-site/
+  PERSONA_URL   = "https://tonyabdelmalak.github.io/<main-repo>/assets/chat/persona.json",
   KNOWLEDGE_URL = "https://tonyabdelmalak.github.io/<main-repo>/assets/chat/knowledge/about-tony.md",
-  USE_KEYWORD_FILTER = "true",
-  ALLOWED_ORIGINS = "https://tonyabdelmalak.github.io/<main-repo>",
-  GROQ_URL = "https://api.groq.com/openai/v1/chat/completions",
-  GROQ_MODEL = "llama-3.1-70b-versatile"
+
+  # Only allow your main site origin (tight CORS)
+  ALLOWED_ORIGINS = "https://tonyabdelmalak.github.io",
+
+  # Groq API endpoint + model (use YOUR preferred prod model here)
+  GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
+  GROQ_MODEL = "<your-prod-model>"
 }
-# Set secret separately:
+# Set the prod secret:
 #   wrangler secret put GROQ_API_KEY --env production
