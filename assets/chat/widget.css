@@ -1,0 +1,74 @@
+:root {
+  --tcw-accent: #4f46e5;
+  --tcw-radius: 12px;
+}
+
+.tcw-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--tcw-radius);
+  background: var(--tcw-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+.tcw-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: var(--tcw-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.tcw-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.tcw-msg {
+  margin-bottom: 8px;
+}
+
+.tcw-msg strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tcw-inputbar {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.tcw-inputbar textarea {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  resize: none;
+  border-top-left-radius: var(--tcw-radius);
+}
+
+.tcw-inputbar button {
+  background: var(--tcw-accent);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-top-right-radius: var(--tcw-radius);
+}
