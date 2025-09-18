@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tony’s Staging — Chat Agent</title>
+  <link rel="stylesheet" href="/assets/chat/widget.css">
+</head>
+<body>
+  <h1>Welcome to Tony's Staging Site</h1>
+  <p>This is a staging environment for testing the chat agent.</p>
+  <script src="/assets/chat/widget.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.TonyChatWidget && window.TonyChatWidget.init) {
+        window.TonyChatWidget.init({
+          configPath: "/assets/chat/config.json",
+          position: "bottom-right"
+        });
+      }
+    });
+  </script>
+</body>
+</html>
