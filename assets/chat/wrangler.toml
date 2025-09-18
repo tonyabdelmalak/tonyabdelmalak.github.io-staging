@@ -2,18 +2,15 @@ name = "tony-agent"
 main = "chat-widget/worker.js"
 compatibility_date = "2025-01-01"
 
-[vars]
-# Local default (unused in deploys)
-
 [env.staging]
 vars = { 
   PERSONA_URL = "https://<REFLECTIV>.github.io/assets/chat/persona.json",
   KNOWLEDGE_URL = "https://<REFLECTIV>.github.io/assets/chat/knowledge/about-tony.md",
   USE_KEYWORD_FILTER = "true",
   ALLOWED_ORIGINS = "https://<REFLECTIV>.github.io,https://<TONY_MAIN>.github.io",
-  LLM_URL = "https://api.your-llm.example/v1/chat/completions",
-  LLM_MODEL = "gpt-xyz",
-  LLM_API_KEY = "[REDACTED]"
+  GROQ_URL = "https://api.groq.com/openai/v1/chat/completions",
+  GROQ_MODEL = "llama-3.1-70b-versatile",
+  GROQ_API_KEY = "[REDACTED]"
 }
 
 [env.production]
@@ -22,7 +19,7 @@ vars = {
   KNOWLEDGE_URL = "https://<TONY_MAIN>.github.io/assets/chat/knowledge/about-tony.md",
   USE_KEYWORD_FILTER = "true",
   ALLOWED_ORIGINS = "https://<TONY_MAIN>.github.io,https://<REFLECTIV>.github.io",
-  LLM_URL = "https://api.your-llm.example/v1/chat/completions",
-  LLM_MODEL = "gpt-xyz",
-  LLM_API_KEY = "[REDACTED]"
+  GROQ_URL = "https://api.groq.com/openai/v1/chat/completions",
+  GROQ_MODEL = "llama-3.1-70b-versatile",
+  GROQ_API_KEY = "[REDACTED]"
 }
