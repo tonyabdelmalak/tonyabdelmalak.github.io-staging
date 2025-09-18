@@ -9,34 +9,12 @@ USE_KEYWORD_FILTER = "true"
 # ---------- STAGING (Reflectiv) ----------
 [env.staging]
 vars = {
-  # Public URLs to your staging persona/knowledge hosted on GitHub Pages:
+  # Public URLs to persona/knowledge hosted on Reflectiv staging GitHub Pages
   PERSONA_URL   = "https://reflectivei.github.io/reflectiv-ai/assets/chat/persona.json",
   KNOWLEDGE_URL = "https://reflectivei.github.io/reflectiv-ai/assets/chat/knowledge/about-tony.md",
 
-  # Only allow your Reflectiv staging site to call the Worker
+  # CORS: only allow your staging site origin
   ALLOWED_ORIGINS = "https://reflectivei.github.io",
 
-  # Groq API endpoint + model (pick your staging model)
+  # Groq API settings (use any staging model you like)
   GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
-  GROQ_MODEL = "llama-3.1-70b-versatile"
-}
-# IMPORTANT: set the secret OUTSIDE the file:
-#   wrangler secret put GROQ_API_KEY --env staging
-
-# ---------- PRODUCTION (Main site) ----------
-[env.production]
-vars = {
-  # Public URLs to your production persona/knowledge on your main site repo
-  # Example: if your main site is https://tonyabdelmalak.github.io/tony-site/
-  PERSONA_URL   = "https://tonyabdelmalak.github.io/<main-repo>/assets/chat/persona.json",
-  KNOWLEDGE_URL = "https://tonyabdelmalak.github.io/<main-repo>/assets/chat/knowledge/about-tony.md",
-
-  # Only allow your main site origin (tight CORS)
-  ALLOWED_ORIGINS = "https://tonyabdelmalak.github.io",
-
-  # Groq API endpoint + model (use YOUR preferred prod model here)
-  GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
-  GROQ_MODEL = "<your-prod-model>"
-}
-# Set the prod secret:
-#   wrangler secret put GROQ_API_KEY --env production
