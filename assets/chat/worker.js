@@ -1,66 +1,119 @@
-// Minimal Worker to build a system message from persona + knowledge,
-// with an optional keyword-filter that selects only relevant knowledge snippets.
-// Replace MODEL CALL section with your provider's API code.
+// chat-widget/worker.js
+// Cloudflare Worker that builds a System prompt from persona + knowledge,
+// optionally filters knowledge by user keywords, and calls Groq's
+// OpenAI-compatible Chat Completions API. Supports SSE streaming via ?stream=1.
 
 export default {
   async fetch(req, env, ctx) {
-    if (req.method === "OPTIONS") return cors(req, "");
-    if (req.method !== "POST") return cors(req, JSON.stringify({ ok: true }));
+    const url = new URL(req.url);
 
-    const { messages = [], user = "anonymous" } = await req.json().catch(() => ({ messages: [] }));
-    const userMsg = lastUserMessage(messages) || "";
+    // --- Health check (GET /healthz) ---
+    if (url.pathname === "/healthz") {
+      return new Response("ok", { status: 200, headers: baseCORSHeaders(req, env) });
+    }
 
+    // --- CORS preflight ---
+    if (req.method === "OPTIONS") {
+      return new Response("", { status: 204, headers: baseCORSHeaders(req, env) });
+    }
+
+    // Enforce POST /chat for API calls
+    if (url.pathname !== "/chat" || req.method !== "POST") {
+      return json({ error: "Use POST /chat" }, 404, req, env);
+    }
+
+    // Parse payload
+    const { messages = [] } = await safeJson(req);
+
+    // Build context
     try {
       const persona = await getPersona(env);
-      const knowledgeDocs = await getKnowledgeDocs(env); // array of {title, text}
+      const userMsg = lastUserMessage(messages) || "";
+      const knowledgeDocs = await getKnowledgeDocs(env); // [{title,text}]
       const selected = await selectKnowledge(userMsg, knowledgeDocs, env);
-
       const systemMsg = buildSystemMessage(persona, selected);
 
       const llmMessages = [
         { role: "system", content: systemMsg },
-        ...stripSystem(messages), // keep prior chat but avoid duplicate system msgs
+        ...stripSystem(messages),
         { role: "user", content: userMsg }
       ];
 
-      // ---- MODEL CALL (replace with your LLM provider) ----
-      // Example shape:
-      // const resp = await fetch(env.LLM_URL, {
-      //   method: "POST",
-      //   headers: { "Authorization": `Bearer ${env.LLM_API_KEY}`, "Content-Type": "application/json" },
-      //   body: JSON.stringify({ model: env.LLM_MODEL, messages: llmMessages, temperature: persona.voice?.style?.temperature ?? 0.3 })
-      // });
-      // const data = await resp.json();
-      // const answer = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
-      const answer = fallbackLocalAnswer(userMsg, selected); // temporary dev fallback
-      // -----------------------------------------------------
+      const model = env.GROQ_MODEL || "llama-3.1-70b-versatile";
+      const temperature = persona?.voice?.style?.temperature ?? 0.3;
+      const wantStream = (url.searchParams.get("stream") === "1");
 
-      return cors(req, JSON.stringify({ role: "assistant", content: answer }));
+      // --- Call Groq (OpenAI-compatible) ---
+      const groqBody = {
+        model,
+        temperature,
+        messages: llmMessages,
+        stream: wantStream
+      };
+
+      const groqResp = await fetch(env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${env.GROQ_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(groqBody)
+      });
+
+      if (!groqResp.ok) {
+        const errText = await groqResp.text();
+        return json({ error: `Groq API error ${groqResp.status}: ${errText}` }, 500, req, env);
+      }
+
+      // --- Streaming path: pipe SSE straight through ---
+      if (wantStream) {
+        const headers = new Headers({
+          ...baseCORSHeaders(req, env),
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          "Connection": "keep-alive"
+        });
+        return new Response(groqResp.body, { status: 200, headers });
+      }
+
+      // --- Non-stream path: return full JSON content ---
+      const data = await groqResp.json();
+      const answer = data?.choices?.[0]?.message?.content ?? "I couldn’t generate a response.";
+      return json({ role: "assistant", content: answer }, 200, req, env);
+
     } catch (e) {
-      return cors(req, JSON.stringify({ error: e.message }), 500);
+      return json({ error: e.message || String(e) }, 500, req, env);
     }
   }
 };
 
-// ---------- Helpers ----------
+// ----------------- Utilities -----------------
 
-function cors(req, body, status = 200) {
+function baseCORSHeaders(req, env) {
   const origin = req.headers.get("Origin") || "";
-  const allowed = (ALLOWED_ORIGINS(req) || "").split(",").map(s => s.trim()).filter(Boolean);
-  const headers = {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  const allowedList = String(env.ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
+  const allowOrigin = allowedList.includes(origin) ? origin : (allowedList[0] || "*");
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS, GET",
     "Access-Control-Allow-Headers": "content-type, authorization",
-    "Access-Control-Allow-Origin": allowed.includes(origin) ? origin : (allowed[0] || "*")
+    "Vary": "Origin"
   };
-  return new Response(body, { status, headers });
 }
 
-function ALLOWED_ORIGINS(req) {
-  // env is not directly accessible here; supply via global var at top of fetch.
-  // Use a closure trick: read from request.cf or a header if needed.
-  // Simpler: allow both staging/prod via wrangler vars injected at build time.
-  return (globalThis.__ALLOWED_ORIGINS || "");
+function json(obj, status, req, env) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: {
+      "Content-Type": "application/json",
+      ...baseCORSHeaders(req, env)
+    }
+  });
+}
+
+async function safeJson(req) {
+  try { return await req.json(); }
+  catch { return {}; }
 }
 
 function lastUserMessage(messages) {
@@ -89,21 +142,15 @@ async function getPersona(env) {
   const url = env.PERSONA_URL;
   if (!url) throw new Error("Missing PERSONA_URL");
   const data = await fetchJSON(url);
-  // stash allowed origins globally for CORS convenience
-  globalThis.__ALLOWED_ORIGINS = env.ALLOWED_ORIGINS || "";
   return data;
 }
 
 async function getKnowledgeDocs(env) {
-  // Supports either a single URL or comma-separated list of URLs.
-  // If using one consolidated file, set KNOWLEDGE_URL to that file only.
+  // Supports a single URL or comma-separated list of URLs
   const urls = String(env.KNOWLEDGE_URL || "").split(",").map(s => s.trim()).filter(Boolean);
   if (!urls.length) throw new Error("Missing KNOWLEDGE_URL");
   const docs = [];
-  for (const u of urls) {
-    const text = await fetchText(u);
-    docs.push({ title: titleFromURL(u), text });
-  }
+  for (const u of urls) docs.push({ title: titleFromURL(u), text: await fetchText(u) });
   return docs;
 }
 
@@ -116,11 +163,9 @@ function titleFromURL(u) {
   }
 }
 
-// Keyword filter (very lightweight):
-// - If USE_KEYWORD_FILTER=false: return the entire consolidated knowledge file.
-// - If true: pick sections whose headings or first lines match user keywords (company/topics).
+// --- Lightweight keyword filter ---
 async function selectKnowledge(userMsg, docs, env) {
-  const useFilter = String(env.USE_KEYWORD_FILTER || "false").toLowerCase() === "true";
+  const useFilter = String(env.USE_KEYWORD_FILTER || "true").toLowerCase() === "true";
   if (!useFilter) return docs;
 
   const keywords = extractKeywords(userMsg);
@@ -133,9 +178,8 @@ async function selectKnowledge(userMsg, docs, env) {
       chosen.push({ title: d.title, text: merged });
     }
   }
-  // Fallback: if nothing matched, include the whole doc to avoid empty context.
-  if (!chosen.length) return docs;
-  return chosen;
+  // Fallback to full docs if no section matched
+  return chosen.length ? chosen : docs;
 }
 
 function extractKeywords(q) {
@@ -167,7 +211,8 @@ function splitMarkdownSections(md) {
 function matchesKeywords(h, b, keywords) {
   const hay = `${h}\n${b}`.toLowerCase();
   return keywords.some(k => hay.includes(k)) ||
-         ["quibi","flowserve","sony","roadr","hbo","nbcuniversal","recruit","attrition","workday","tableau","dashboard","forecast"].some(k => hay.includes(k));
+    ["quibi","flowserve","sony","roadr","hbo","nbcuniversal","recruit","attrition","workday","tableau","dashboard","forecast"]
+      .some(k => hay.includes(k));
 }
 
 function buildSystemMessage(persona, knowledgeDocs) {
@@ -191,12 +236,6 @@ function buildSystemMessage(persona, knowledgeDocs) {
     bio,
     "\nPublic knowledge from my site:",
     knowledge,
-    "\nFollow-up guidance: End with an engaging, relevant question when appropriate."
+    "\nFollow-up guidance: End with one engaging, relevant question when appropriate."
   ].join("\n");
-}
-
-// Dev-only fallback if you haven’t wired a model yet.
-function fallbackLocalAnswer(userMsg, selected) {
-  const hint = selected?.[0]?.title || "about-tony.md";
-  return `I can help with that. Which part interests you most—projects, dashboards, or my pivot? (Pulled context from ${hint}).`;
 }
