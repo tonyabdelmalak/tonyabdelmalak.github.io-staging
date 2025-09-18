@@ -10,8 +10,8 @@ USE_KEYWORD_FILTER = "true"
 [env.staging]
 vars = {
   # Public URLs to persona/knowledge hosted on Reflectiv staging GitHub Pages
-  PERSONA_URL   = "https://reflectivei.github.io/reflectiv-ai/assets/chat/persona.json",
-  KNOWLEDGE_URL = "https://reflectivei.github.io/reflectiv-ai/assets/chat/knowledge/about-tony.md",
+  PERSONA_URL   = "https://tonyabdelmalak.github.io/tony-portfolio/assets/chat/persona.json"
+KNOWLEDGE_URL = "https://tonyabdelmalak.github.io/tony-portfolio/assets/chat/knowledge/about-tony.md",
 
   # CORS: only allow your staging site origin
   ALLOWED_ORIGINS = "https://reflectivei.github.io",
