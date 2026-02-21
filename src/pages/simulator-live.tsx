@@ -40,6 +40,78 @@ export default function SimulatorLivePage() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
 
+  const getFallbackQuestions = (): Question[] => {
+    const allQuestions: Question[] = [
+      {
+        id: 1,
+        question: 'Tell me about a time when you had to work with a difficult team member.',
+        type: 'behavioral',
+        difficulty: 'mid',
+        sampleAnswer: 'Use STAR method: Describe the situation, your task, actions taken, and results achieved.',
+        evaluationCriteria: 'Conflict resolution, communication, teamwork',
+      },
+      {
+        id: 2,
+        question: 'Describe a situation where you had to meet a tight deadline.',
+        type: 'behavioral',
+        difficulty: 'entry',
+        sampleAnswer: 'Focus on time management, prioritization, and results.',
+        evaluationCriteria: 'Time management, prioritization, stress handling',
+      },
+      {
+        id: 3,
+        question: 'Explain the difference between REST and GraphQL APIs.',
+        type: 'technical',
+        difficulty: 'mid',
+        sampleAnswer: 'REST uses multiple endpoints, GraphQL uses a single endpoint with flexible queries.',
+        evaluationCriteria: 'Technical knowledge, clarity of explanation',
+      },
+      {
+        id: 4,
+        question: 'How would you approach debugging a production issue that you cannot reproduce locally?',
+        type: 'problem-solving',
+        difficulty: 'senior',
+        sampleAnswer: 'Check logs, monitoring tools, reproduce in staging, use feature flags, etc.',
+        evaluationCriteria: 'Problem-solving approach, systematic thinking',
+      },
+      {
+        id: 5,
+        question: 'Tell me about a time when you had to lead a team through a major change.',
+        type: 'leadership',
+        difficulty: 'senior',
+        sampleAnswer: 'Focus on change management, communication, team motivation.',
+        evaluationCriteria: 'Leadership, change management, communication',
+      },
+      {
+        id: 6,
+        question: 'What would you do if you disagreed with your manager\'s decision?',
+        type: 'situational',
+        difficulty: 'mid',
+        sampleAnswer: 'Express concerns professionally, provide data, respect final decision.',
+        evaluationCriteria: 'Professional communication, respect for hierarchy',
+      },
+      {
+        id: 7,
+        question: 'How do you handle receiving critical feedback?',
+        type: 'behavioral',
+        difficulty: 'entry',
+        sampleAnswer: 'Listen actively, ask clarifying questions, create action plan.',
+        evaluationCriteria: 'Emotional intelligence, growth mindset',
+      },
+      {
+        id: 8,
+        question: 'Describe a time when you failed and what you learned from it.',
+        type: 'behavioral',
+        difficulty: 'mid',
+        sampleAnswer: 'Be honest, focus on learning and growth, show self-awareness.',
+        evaluationCriteria: 'Self-awareness, learning ability, honesty',
+      },
+    ];
+
+    // Filter by selected category (simplified - just return all for demo)
+    return allQuestions.filter(q => q.difficulty === selectedDifficulty || selectedDifficulty === 'all');
+  };
+
   useEffect(() => {
     if (sessionActive && questionStartTime === null) {
       setQuestionStartTime(Date.now());
