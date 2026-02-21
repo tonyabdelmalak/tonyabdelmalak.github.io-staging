@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, User } from 'lucide-react';
+import AIChat from '@/components/AIChat';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -64,8 +65,9 @@ export default function Header() {
           ))}
         </div>
 
-        {/* User menu */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* AI Chat and User menu */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-2 lg:items-center">
+          <AIChat />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-2">
