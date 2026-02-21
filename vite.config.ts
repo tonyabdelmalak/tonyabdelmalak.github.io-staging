@@ -25,6 +25,7 @@ if (allowedHosts.length === 0) {
 }
 
 export default defineConfig(({ mode }) => ({
+	base: process.env.NODE_ENV === 'production' ? '/tonyabdelmalak.github.io-staging/' : '/',
 	plugins: [
 		react({
 			babel: {
