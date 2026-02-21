@@ -1,312 +1,254 @@
-# V8 App Template
+# Interview Intelligence™ Platform
 
-A modern, production-ready web application template built with Vite, React, and TypeScript. Designed for AI-assisted development with component introspection, layout systems, and excellent developer experience.
+AI-powered interview preparation and performance platform designed to help you detect signals, navigate objections, and secure opportunities.
 
-## 🚀 Features
+## 🌐 Live Site
 
-- **⚡ Lightning Fast**: Vite for instant hot module replacement and optimized builds
-- **🎯 Type Safe**: Full TypeScript coverage across frontend and backend
-- **🎨 Beautiful UI**: shadcn/ui components with Tailwind CSS
-- **🧠 AI-Friendly**: Component introspection for AI development tools
-- **📱 Responsive**: Mobile-first design with modern CSS
-- **🔧 Developer Experience**: Hot reload, linting, formatting, and testing setup
-- **🚀 Production Ready**: SSR support, optimized builds, and deployment-ready
+- **Staging**: https://tonyabdelmalak.com/tonyabdelmalak.github.io-staging/
+- **GitHub**: https://github.com/tonyabdelmalak/tonyabdelmalak.github.io-staging
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture
 
-### Frontend
+This platform consists of two main components:
 
-- **React 18+** - Modern React with hooks and concurrent features
-- **TypeScript 5** - Full type safety across the application
-- **Vite 5** - Fast build tool and dev server with HMR
-- **Tailwind CSS 3** - Utility-first CSS framework
-- **shadcn/ui** - Beautiful, accessible component library
-- **React Router DOM** - Client-side routing
-- **Framer Motion** - Smooth animations and transitions
+### 1. Frontend (GitHub Pages)
+- **Framework**: React 19 + TypeScript + Vite
+- **UI**: Tailwind CSS + shadcn/ui components
+- **Hosting**: GitHub Pages (static site)
+- **Deployment**: Automated via `gh-pages` npm package
 
-### Backend
+### 2. Backend (Cloudflare Workers)
+- **Runtime**: Cloudflare Workers (serverless)
+- **AI**: Groq API (llama-3.1 models)
+- **Features**: Streaming chat, persona-based responses, knowledge filtering
+- **Deployment**: Wrangler CLI
 
-- **Node.js API** - Simple health check and utilities
-- **TypeScript** - Type-safe backend development
+## 🚀 Quick Start
 
-### Development Tools
+### Prerequisites
 
-- **ESLint 9** - Code linting
-- **Prettier** - Code formatting
-- **Vitest** - Fast unit testing
-- **TypeScript ESLint** - TypeScript-specific linting
+1. **Node.js 20+** and npm
+2. **Git** for version control
+3. **Cloudflare Account** (free tier works)
+4. **Groq API Key** (free at https://console.groq.com/keys)
 
-> **Note:** SSR support with vite-plugin-ssr has been temporarily removed due to compatibility issues with the directory structure. This can be re-added later when the plugin is updated or replaced with a more stable alternative.
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+### Deploy Frontend to GitHub Pages
+
+```bash
+# Build and deploy in one command
+npm run build && npm run deploy
+```
+
+This will:
+1. Build the React app with production optimizations
+2. Deploy to the `gh-pages` branch
+3. Make it live at your GitHub Pages URL
+
+### Deploy Backend to Cloudflare
+
+**Option 1: Use the deployment script (recommended)**
+
+```bash
+./deploy-worker.sh
+```
+
+This interactive script will:
+- Check if Wrangler is installed
+- Login to Cloudflare (if needed)
+- Prompt for environment (staging/production)
+- Check/set GROQ_API_KEY secret
+- Deploy the worker
+
+**Option 2: Manual deployment**
+
+```bash
+# Install Wrangler globally
+npm install -g wrangler
+
+# Login to Cloudflare
+wrangler login
+
+# Set your Groq API key
+wrangler secret put GROQ_API_KEY --env staging
+
+# Deploy to staging
+wrangler deploy --env staging
+```
+
+See [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md) for detailed instructions.
 
 ## 📁 Project Structure
 
 ```
-v8-app-template/
+.
 ├── src/
 │   ├── components/       # React components
-│   │   ├── ui/           # shadcn/ui base components (40+ components)
-│   │   └── Spinner.tsx
-│   ├── layouts/          # Layout systems
-│   │   ├── RootLayout.tsx    # Centralized layout wrapper
-│   │   ├── Website.tsx       # Structural container
-│   │   ├── Dashboard.tsx     # Dashboard layout
-│   │   ├── RootLayout.md     # RootLayout documentation
-│   │   ├── Website.md        # Website layout documentation
-│   │   └── parts/            # Layout components
-│   │       ├── Header.tsx
-│   │       └── Footer.tsx
-│   ├── pages/            # Page components (content only)
-│   │   ├── index.tsx     # Homepage
-│   │   └── _404.tsx      # 404 page
-│   ├── lib/              # Utilities and API
-│   │   ├── utils.ts      # Utility functions
-│   │   └── api-client.ts # API client
-│   ├── api/              # Backend API routes
-│   │   └── health.ts     # Health check endpoint
-│   ├── styles/           # Global styles
-│   │   └── globals.css
-│   ├── test/             # Test setup
-│   │   └── setup.ts
-│   ├── App.tsx           # Root application component
-│   ├── main.tsx          # Application entry point
-│   ├── router.ts         # Route definitions
-│   └── routes.tsx        # Route components
-├── dev-tools/            # Development mode enhancements
-├── source-mapper/        # AI introspection plugin
-├── public/               # Static assets
-└── scripts/              # Development scripts
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...          # Custom components
+│   ├── layouts/         # Page layouts (RootLayout, Dashboard)
+│   ├── pages/           # Route pages
+│   ├── styles/          # Global CSS
+│   └── main.tsx         # App entry point
+├── assets/
+│   └── chat/            # AI chat configuration
+│       ├── config.json      # Chat widget config
+│       ├── persona.json     # AI persona definition
+│       ├── knowledge/       # Knowledge base markdown files
+│       └── worker.js        # (reference only, actual worker is in root)
+├── public/              # Static assets
+├── worker.js            # Cloudflare Worker code
+├── wrangler.toml        # Cloudflare Worker config
+├── deploy-worker.sh     # Worker deployment script
+└── package.json         # Dependencies and scripts
 ```
-
-## 📜 Available Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run test` - Run Vitest unit tests
-- `npm run lint` - Run ESLint code linting
-- `npm run type-check` - Run TypeScript type checking
-- `npm run setup` - Initialize project with dependencies
-
-## 🎨 UI Components
-
-This template includes shadcn/ui components that are:
-
-- **Accessible** - Built with Radix UI primitives
-- **Customizable** - Easy to modify and extend
-- **Consistent** - Design system with CSS variables
-- **Copy-paste friendly** - Own your components
-
-The template includes 40+ pre-configured shadcn/ui components:
-
-- **Layout**: Card, Separator, Tabs, Sheet, Dialog
-- **Forms**: Button, Input, Textarea, Select, Checkbox, Switch
-- **Navigation**: Navigation Menu, Breadcrumb, Pagination
-- **Feedback**: Alert, Badge, Progress, Skeleton, Sonner
-- **Data Display**: Table, Avatar, Calendar, Hover Card
-- **Overlays**: Popover, Tooltip, Alert Dialog, Drawer
-- **Interactive**: Accordion, Collapsible, Command, Context Menu
-
-To add new components:
-
-```bash
-npx shadcn-ui@latest add component-name
-```
-
-## 🧠 AI Integration
-
-### Component Introspection
-
-The custom source-mapper plugin adds metadata to components in development:
-
-```html
-<div
-  data-source-file="/src/components/Button.tsx"
-  data-source-line="15"
-  data-source-component="Button"
->
-  Click Me
-</div>
-```
-
-### Development Mode Integration
-
-The dev-tools package provides:
-
-- **Element selection**: Click to identify components
-- **Live editing**: Modify component props in real-time
-- **Source mapping**: Navigate directly to component source
-- **AI integration**: Enhanced context for AI development tools
-
-### AI-Friendly Patterns
-
-- **Consistent naming**: PascalCase components, camelCase hooks
-- **Clear file structure**: Logical separation of concerns
-- **Type-first approach**: Comprehensive TypeScript types
-- **Standard patterns**: CRUD operations, form handling, error boundaries
-
-## 🗃️ API & Layouts
-
-### API Routes
-
-The template includes:
-
-- `GET /api/health` - Health check endpoint
-- Extensible API client setup in `src/lib/api-client.ts`
-
-### Layout System
-
-**RootLayout Pattern** (Recommended for multi-page sites):
-
-Configure header and footer once in `App.tsx`, applies to all pages:
-
-```tsx
-// src/App.tsx
-const headerConfig = {
-  logo: { text: "MyApp" },
-  navItems: [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-  ],
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <RootLayout config={{ header: headerConfig, footer: footerConfig }}>
-        <Outlet />
-      </RootLayout>
-    ),
-    children: routes,
-  },
-]);
-```
-
-Pages become simple content components:
-
-```tsx
-// src/pages/home.tsx
-export default function HomePage() {
-  return <div>Your content here</div>;
-}
-```
-
-**Available Layouts**:
-
-- **RootLayout** (`src/layouts/RootLayout.tsx`) - Centralized header/footer wrapper
-- **Website** (`src/layouts/Website.tsx`) - Structural container (used by RootLayout)
-- **Dashboard** (`src/layouts/Dashboard.tsx`) - Admin panels and dashboards
-
-See `src/layouts/*.md` for detailed usage documentation.
-
-## 🧪 Testing
-
-Run tests with:
-
-```bash
-npm run test
-```
-
-The template includes:
-
-- **Vitest** - Fast unit testing framework
-- **React Testing Library** - Component testing utilities
-- **Jest DOM** - Custom Jest matchers
-
-## 📦 Deployment
-
-### Build for production:
-
-```bash
-npm run build
-```
-
-### Deploy options:
-
-- **Vercel/Netlify** - Frontend deployment
-- **Railway/Render** - Full-stack deployment
-- **Docker** - Containerized deployment
 
 ## 🔧 Configuration
 
-### Environment Variables
+### Frontend Configuration
 
-Copy `env.example` to `.env` and configure:
+**Vite Config** (`vite.config.ts`):
+- Base path set to `/tonyabdelmalak.github.io-staging/` for GitHub Pages
+- React plugin with Fast Refresh
+- TypeScript path aliases (`@/` → `src/`)
 
-```env
-VITE_APP_NAME=V8 App Template
-VITE_API_URL=http://localhost:5173/api
-NODE_ENV=development
-PORT=5173
+**Chat Widget** (`assets/chat/config.json`):
+```json
+{
+  "endpoint": "https://YOUR-WORKER.workers.dev/chat",
+  "title": "Interview Intelligence AI",
+  "greeting_markdown": "Welcome message...",
+  "placeholder": "Ask about interview preparation..."
+}
 ```
 
-### Custom Plugins
+### Backend Configuration
 
-**Source Mapper Plugin**: Adds component introspection for AI tools
-**Dev Tools Plugin**: Enables development mode enhancements
-**Fullstory Integration**: Optional user analytics (configurable)
+**Wrangler Config** (`wrangler.toml`):
+- Staging and production environments
+- Environment variables (PERSONA_URL, KNOWLEDGE_URL, ALLOWED_ORIGINS)
+- Groq API settings (model, URL)
 
-Configure in `vite.config.ts`:
+**Secrets** (set via Wrangler CLI):
+- `GROQ_API_KEY`: Your Groq API key
 
-```typescript
-import { defineConfig } from "vite";
-import { sourceMapperPlugin } from "./source-mapper";
-import { devToolsPlugin } from "./dev-tools";
+## 🎨 Features
 
-export default defineConfig({
-  plugins: [sourceMapperPlugin(), devToolsPlugin()],
-});
+### Interview Intelligence Platform
+- **AI Daily Insights**: Personalized recommendations
+- **Quick Actions**: AI Coach, Interview Simulator, Exercises, Coaching Modules
+- **8 Core Capabilities**:
+  - Behavioral Analysis
+  - Technical Assessment
+  - Communication Skills
+  - Cultural Fit Evaluation
+  - Stress Management
+  - Body Language Analysis
+  - Question Preparation
+  - Performance Metrics
+
+### AI Chat System
+- **Streaming Responses**: Real-time SSE streaming
+- **Persona-Based**: Customizable AI personality
+- **Knowledge Filtering**: Keyword-based context selection
+- **CORS Support**: Multi-origin access control
+
+## 🛠️ Development
+
+### Available Scripts
+
+```bash
+npm run dev          # Start dev server (localhost:5173)
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run deploy       # Deploy to GitHub Pages
+npm run lint         # Run ESLint
+npm run type-check   # TypeScript type checking
 ```
 
-## 🎯 Best Practices
+### Tech Stack
 
-### Component Architecture
+**Frontend:**
+- React 19
+- TypeScript
+- Vite 6
+- Tailwind CSS
+- shadcn/ui
+- Motion (animations)
+- React Router
 
-- Keep components small and focused
-- Use composition over inheritance
-- Extract reusable logic into hooks
-- Prefer function components with hooks
+**Backend:**
+- Cloudflare Workers
+- Groq API (LLM)
+- Server-Sent Events (SSE)
 
-### State Management
+## 📚 Documentation
 
-- Keep local state in components with useState/useReducer
-- Use React Context for app-wide state (theme, auth)
-- Consider external libraries (Zustand, Redux Toolkit) for complex state
-- Leverage layout props for shared configuration
+- [Cloudflare Deployment Guide](./CLOUDFLARE_DEPLOYMENT.md) - Detailed worker deployment instructions
+- [App Template README](./README.md) - This file
 
-### Layout Usage
+## 🔐 Environment Variables
 
-- Use RootLayout for multi-page sites (configure in `App.tsx`)
-- Pages should only contain content, not layout concerns
-- Define header/footer once, applies to all pages
-- Follow layout documentation in `src/layouts/*.md`
-- Never duplicate header/footer config across pages
+### Frontend (Vite)
+No environment variables needed for basic functionality.
 
-## 🤝 Contributing
+### Backend (Cloudflare Worker)
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if needed
-5. Run linting and tests
-6. Submit a pull request
+**Public Variables** (in `wrangler.toml`):
+- `PERSONA_URL` - URL to persona.json
+- `KNOWLEDGE_URL` - URL to knowledge markdown file(s)
+- `ALLOWED_ORIGINS` - Comma-separated allowed origins
+- `GROQ_URL` - Groq API endpoint
+- `GROQ_MODEL` - Model name (e.g., llama-3.1-70b-versatile)
+- `USE_KEYWORD_FILTER` - Enable/disable keyword filtering
+
+**Secrets** (set via `wrangler secret put`):
+- `GROQ_API_KEY` - Your Groq API key
+
+## 🚨 Troubleshooting
+
+### GitHub Pages shows 404
+1. Ensure `gh-pages` branch exists: `git branch -r`
+2. Check GitHub Pages settings: Repository Settings → Pages
+3. Select "Deploy from a branch" → "gh-pages" → "/ (root)"
+4. Wait 1-2 minutes for deployment
+
+### AI Chat not working
+1. Check worker is deployed: `curl https://YOUR-WORKER.workers.dev/healthz`
+2. Verify GROQ_API_KEY is set: `wrangler secret list --env staging`
+3. Check CORS settings in `wrangler.toml`
+4. Verify persona/knowledge URLs are accessible
+
+### Build errors
+1. Clear node_modules: `rm -rf node_modules && npm install`
+2. Clear build cache: `rm -rf dist`
+3. Check Node version: `node -v` (should be 20+)
 
 ## 📄 License
 
-MIT License - feel free to use this template for any project.
+MIT License - feel free to use this for your own projects!
 
-## 🙏 Acknowledgments
+## 🤝 Contributing
 
-Built with amazing open-source tools:
+This is a personal project, but suggestions and feedback are welcome!
 
-- [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Vitest](https://vitest.dev/)
+## 📧 Contact
+
+- **GitHub**: [@tonyabdelmalak](https://github.com/tonyabdelmalak)
+- **Website**: https://tonyabdelmalak.com
 
 ---
 
-**Happy coding! 🎉**
+**Built with ❤️ using React, Cloudflare Workers, and Groq AI**
