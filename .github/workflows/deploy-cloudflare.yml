@@ -1,0 +1,51 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Workers
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+
+      - name: Set GROQ_API_KEY secret
+        if: github.event.inputs.environment == 'production'
+        run: |
+          echo "Setting GROQ_API_KEY secret..."
+          echo ${{ secrets.GROQ_API_KEY }} | wrangler secret put GROQ_API_KEY
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Deployment to ${{ github.event.inputs.environment }} complete!"
+          echo "Worker URL: https://interview-intelligence-api.workers.dev"
