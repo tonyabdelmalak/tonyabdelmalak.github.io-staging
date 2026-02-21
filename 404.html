@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA redirect hack
+      // Store the path and redirect to index.html
+      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+      location.replace(location.origin + '/tonyabdelmalak.github.io-staging/');
+    </script>
+  </head>
+  <body></body>
+</html>
