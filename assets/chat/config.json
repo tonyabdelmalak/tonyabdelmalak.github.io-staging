@@ -1,7 +1,7 @@
 {
-  "endpoint": "https://tony-agent-staging.tonyabdelmalak.workers.dev/chat",
-  "title": "Tony",
-  "greeting_markdown": "## Greeting\nHi. I'm here to help answer any questions you have about me, my background and goals, current projects, etc. What's on your mind?",
-  "placeholder": "Ask about my projects, dashboards, pivot, or goals…",
+  "endpoint": "/api/chat",
+  "title": "AI Coach",
+  "greeting_markdown": "## Welcome to Interview Intelligence™\nHi! I'm your AI Interview Coach. I can help you prepare for interviews, practice responses, and improve your performance. What would you like to work on today?",
+  "placeholder": "Ask about interview tips, practice questions, or coaching advice…",
   "ui": { "primaryColor": "#4f46e5", "radius": 12 }
 }
