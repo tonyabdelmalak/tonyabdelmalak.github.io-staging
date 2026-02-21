@@ -25,8 +25,8 @@ interface SessionQuestion {
 
 export default function SimulatorLivePage() {
   const [sessionActive, setSessionActive] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
-  const [selectedDifficulty, setSelectedDifficulty] = useState('mid');
+  const [selectedCategory, setSelectedCategory] = useState<number>(1);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('mid');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [sessionQuestions, setSessionQuestions] = useState<SessionQuestion[]>([]);
@@ -47,7 +47,7 @@ export default function SimulatorLivePage() {
   }, [sessionActive, currentQuestionIndex]);
 
   const startSession = async () => {
-    if (!selectedCategory) {
+    if (!selectedCategory || selectedCategory === 0) {
       setMessage({ type: 'error', text: 'Please select a category' });
       return;
     }
@@ -227,7 +227,7 @@ export default function SimulatorLivePage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-2 block">Category</label>
-                    <Select value={selectedCategory?.toString()} onValueChange={(v) => setSelectedCategory(parseInt(v))}>
+                    <Select value={selectedCategory.toString()} onValueChange={(v) => setSelectedCategory(parseInt(v))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select category" />
                       </SelectTrigger>
