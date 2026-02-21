@@ -11,6 +11,7 @@
     "build:vite": "vite build",
     "bundle": "node bundle.js",
     "preview": "vite preview",
+    "deploy": "gh-pages -d dist/client",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
