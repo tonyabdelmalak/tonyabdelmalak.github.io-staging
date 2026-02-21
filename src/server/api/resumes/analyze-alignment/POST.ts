@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { getSecret } from '#airo/secrets';
+import { getSecret } from '../../../../lib/secrets.js';
 
 export default async function handler(req: Request, res: Response) {
   try {

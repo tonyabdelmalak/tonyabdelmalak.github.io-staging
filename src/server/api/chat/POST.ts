@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { getSecret } from '#airo/secrets';
+import { getSecret } from '../../../lib/secrets.js';
 
 interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
