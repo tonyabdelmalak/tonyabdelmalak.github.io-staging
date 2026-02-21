@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DIYm0339.js","assets/vendor-Db6UC8BF.js","assets/preload-DYXzOcNn.js","assets/_404-Bo-oUTJS.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-CH0QULx4.js","assets/vendor-Db6UC8BF.js","assets/preload-DYXzOcNn.js","assets/_404-Bo-oUTJS.js","assets/dashboard-Dn341Wy_.js","assets/simulator-live-CGKbl7Yh.js","assets/ai-coach-CWiSa9Cb.js","assets/interview-prep-DQtzFMJ7.js","assets/exercises-OtBSzo1b.js","assets/progress-DgGOJRNw.js","assets/behavioral-metrics-sC8bmGqP.js"])))=>i.map(i=>d[i]);
 import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, b as SubTrigger2, C as ChevronRight, d as SubContent2, P as Portal2, e as Content2, I as Item2, f as CheckboxItem2, g as ItemIndicator2, h as Check, R as RadioItem2, i as Circle, k as Label2, l as Separator2, m as Root2, T as Trigger, X, n as Menu, U as User, A as ArrowRight, B as Brain, o as Target, Z as Zap, p as Award, q as createBrowserRouter, s as RouterProvider2, O as Outlet, Q as QueryClient, u as ReactDOM, v as React, w as QueryClientProvider } from "./vendor-Db6UC8BF.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
 function Footer() {
@@ -782,7 +782,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-DIYm0339.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-CH0QULx4.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -1409,20 +1409,83 @@ function HomePage() {
   }, this);
 }
 const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-Bo-oUTJS.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
+const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-Dn341Wy_.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
+const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-CGKbl7Yh.js"), true ? __vite__mapDeps([5,1,2]) : void 0));
+const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-CWiSa9Cb.js"), true ? __vite__mapDeps([6,1,2]) : void 0));
+const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-DQtzFMJ7.js"), true ? __vite__mapDeps([7,1,2]) : void 0));
+const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-OtBSzo1b.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
+const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-DgGOJRNw.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
+const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-sC8bmGqP.js"), true ? __vite__mapDeps([10,1,2]) : void 0));
 const routes = [
   {
     path: "/",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 12 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 19 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 12,
+      lineNumber: 19,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/dashboard",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DashboardPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 23 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 23,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/simulator-live",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SimulatorLivePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 27 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 27,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/ai-coach",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AICoachPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 31 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 31,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/interview-prep",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(InterviewPrepPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 35 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 35,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/exercises",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ExercisesPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 39 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 39,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/progress",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ProgressPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 43 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 43,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/behavioral-metrics",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(BehavioralMetricsPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 47 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 47,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "*",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 16 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 51 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 16,
+      lineNumber: 51,
       columnNumber: 12
     }, void 0)
   }
