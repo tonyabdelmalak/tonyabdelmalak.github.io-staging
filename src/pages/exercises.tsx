@@ -441,6 +441,13 @@ export default function ExercisesPage() {
             <p className="text-muted-foreground">Improve your interview skills with our AI-powered question library</p>
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <Alert className="mb-6">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
