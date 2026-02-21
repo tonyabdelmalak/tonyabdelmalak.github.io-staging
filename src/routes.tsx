@@ -12,6 +12,7 @@ const InterviewPrepPage = lazy(() => import('./pages/interview-prep'));
 const ExercisesPage = lazy(() => import('./pages/exercises'));
 const ProgressPage = lazy(() => import('./pages/progress'));
 const BehavioralMetricsPage = lazy(() => import('./pages/behavioral-metrics'));
+const ResumeBuilderPage = lazy(() => import('./pages/resume-builder'));
 
 export const routes: RouteObject[] = [
   {
@@ -47,12 +48,16 @@ export const routes: RouteObject[] = [
     element: <BehavioralMetricsPage />,
   },
   {
+    path: '/resume-builder',
+    element: <ResumeBuilderPage />,
+  },
+  {
     path: '*',
     element: <NotFoundPage />,
   },
 ];
 
 // Types for type-safe navigation
-export type Path = '/' | '/dashboard' | '/simulator-live' | '/ai-coach' | '/interview-prep' | '/exercises' | '/progress' | '/behavioral-metrics';
+export type Path = '/' | '/dashboard' | '/simulator-live' | '/ai-coach' | '/interview-prep' | '/exercises' | '/progress' | '/behavioral-metrics' | '/resume-builder';
 
 export type Params = Record<string, string | undefined>;

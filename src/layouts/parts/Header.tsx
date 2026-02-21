@@ -18,9 +18,8 @@ export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Resume Builder', href: '/resume-builder' },
     { name: 'Live Simulator', href: '/simulator-live' },
-    { name: 'AI Coach', href: '/ai-coach' },
-    { name: 'Prep', href: '/interview-prep' },
     { name: 'Exercises', href: '/exercises' },
     { name: 'Progress', href: '/progress' },
     { name: 'Metrics', href: '/behavioral-metrics' },
