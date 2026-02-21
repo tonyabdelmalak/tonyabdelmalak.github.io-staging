@@ -1,0 +1,15 @@
+name = "interview-intelligence-api"
+main = "worker-api.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://tonyabdelmalak.com,https://tonyabdelmalak.github.io"
+
+# Cloudflare D1 Database (you'll need to create this)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "interview-intelligence"
+# database_id = "your-database-id"
+
+# Secrets (set with: wrangler secret put GROQ_API_KEY)
+# GROQ_API_KEY
