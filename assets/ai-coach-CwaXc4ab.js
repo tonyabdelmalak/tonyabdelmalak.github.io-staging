@@ -1,6 +1,6 @@
 import { r as reactExports, j as jsxDevRuntimeExports, W as Sparkles, w as Target, _ as Upload, $ as TrendingUp, e as MessageSquare, Y as CircleCheck, a0 as toast } from "./vendor-Cu2fM0-2.js";
-import { e as Badge, C as Card, a as CardHeader, b as CardTitle, c as CardDescription, d as CardContent, B as Button } from "./main-deerAjmx.js";
-import { T as Textarea } from "./textarea-Cs6fkvGK.js";
+import { e as Badge, C as Card, a as CardHeader, b as CardTitle, c as CardDescription, d as CardContent, B as Button } from "./main-DP3epaik.js";
+import { T as Textarea } from "./textarea-BCXKBiwh.js";
 import "./preload-DYXzOcNn.js";
 function AICoachPage() {
   var _a, _b, _c;
@@ -28,7 +28,7 @@ function AICoachPage() {
     }
     setAnalyzing(true);
     try {
-      const apiUrl = "https://interview-intelligence-api.<your-subdomain>.workers.dev";
+      const apiUrl = "/api";
       const response = await fetch(`${apiUrl}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

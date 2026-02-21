@@ -1,6 +1,187 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DbvLEJOQ.js","assets/vendor-Cu2fM0-2.js","assets/preload-DYXzOcNn.js","assets/_404-BqZHAH75.js","assets/dashboard-BBjFBoWQ.js","assets/simulator-live-u7b1_b6L.js","assets/textarea-Cs6fkvGK.js","assets/alert-DMslP0O7.js","assets/ai-coach-DXeC2riq.js","assets/interview-prep-6A95v7ei.js","assets/exercises-CoQHwPoV.js","assets/progress-KKDUnlS0.js","assets/behavioral-metrics-JM60nQqe.js","assets/resume-builder-CyJmRgx7.js"])))=>i.map(i=>d[i]);
-import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-Cu2fM0-2.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-Da5N-i3-.js","assets/vendor-Cu2fM0-2.js","assets/preload-DYXzOcNn.js","assets/_404-BqZHAH75.js","assets/dashboard-BBjFBoWQ.js","assets/simulator-live-CGLnOfUa.js","assets/textarea-BCXKBiwh.js","assets/alert-BkJMrTLP.js","assets/ai-coach-CwaXc4ab.js","assets/interview-prep-6A95v7ei.js","assets/exercises-CSEAak_C.js","assets/progress-KKDUnlS0.js","assets/behavioral-metrics-JM60nQqe.js","assets/resume-builder-C4ksZE8s.js"])))=>i.map(i=>d[i]);
+import { r as reactExports, j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-Cu2fM0-2.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
+function getTargetOrigin() {
+  const parentOrigin = "https://airo-builder.godaddy.com";
+  {
+    return parentOrigin;
+  }
+}
+const MAX_ERROR_MESSAGE_LENGTH = 2e4;
+function safePostMessage(targetWindow, message) {
+  const origin = getTargetOrigin();
+  const safeMessage = {
+    ...message
+  };
+  if (safeMessage.errorMessage && typeof safeMessage.errorMessage === "string") {
+    safeMessage.errorMessage = safeMessage.errorMessage.substring(0, MAX_ERROR_MESSAGE_LENGTH);
+  }
+  targetWindow.postMessage(safeMessage, origin);
+}
+class AiroErrorBoundary extends reactExports.Component {
+  constructor() {
+    super(...arguments);
+    this.state = { error: null, errorInfo: null };
+    this.handleAskAiroToFix = () => {
+      const { error, errorInfo } = this.state;
+      if (!error) {
+        console.error("handleAskAiroToFix called with no error in state");
+        return;
+      }
+      const errorData = {
+        message: error.message || "An unexpected error occurred",
+        name: error.name || "Error",
+        stack: error.stack ?? void 0,
+        componentStack: (errorInfo == null ? void 0 : errorInfo.componentStack) ?? void 0,
+        url: window.location.href,
+        timestamp: Date.now()
+      };
+      console.log("Sending runtime error to parent from AiroErrorBoundary:", errorData);
+      try {
+        safePostMessage(window.parent, {
+          type: "error-fix-request",
+          errorData
+        });
+      } catch (err) {
+        console.error("Failed to send message to parent from AiroErrorBoundary:", err);
+      }
+    };
+  }
+  componentDidMount() {
+  }
+  componentWillUnmount() {
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("Error caught by AiroErrorBoundary:", error, errorInfo);
+    this.setState({ error, errorInfo });
+  }
+  render() {
+    const { error } = this.state;
+    if (error) {
+      return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+        "div",
+        {
+          style: {
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#ffffff"
+          },
+          "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx",
+          "data-dev-line": 75,
+          children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+            "div",
+            {
+              style: {
+                maxWidth: "28rem",
+                margin: "0 auto",
+                textAlign: "center",
+                padding: "0 1rem"
+              },
+              "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx",
+              "data-dev-line": 84,
+              children: [
+                /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+                  "h1",
+                  {
+                    style: {
+                      fontSize: "1.5rem",
+                      fontWeight: "bold",
+                      color: "#dc2626",
+                      marginBottom: "1rem"
+                    },
+                    "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    "data-dev-line": 92,
+                    children: "Something went wrong"
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    lineNumber: 92,
+                    columnNumber: 13
+                  },
+                  this
+                ),
+                /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+                  "p",
+                  {
+                    style: {
+                      color: "#6b7280",
+                      marginBottom: "1.5rem",
+                      maxHeight: "400px",
+                      overflowY: "scroll"
+                    },
+                    "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    "data-dev-line": 102,
+                    children: error.message
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    lineNumber: 102,
+                    columnNumber: 13
+                  },
+                  this
+                ),
+                /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { style: { display: "flex", justifyContent: "center" }, "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx", "data-dev-line": 112, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+                  "button",
+                  {
+                    onClick: this.handleAskAiroToFix,
+                    style: {
+                      backgroundColor: "#6b46c1",
+                      color: "white",
+                      padding: "0.5rem 1rem",
+                      borderRadius: "0.375rem",
+                      border: "none",
+                      cursor: "pointer",
+                      fontSize: "0.875rem",
+                      fontWeight: 500
+                    },
+                    "data-dev-file": "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    "data-dev-line": 113,
+                    children: "Ask Airo to Fix Code"
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                    lineNumber: 113,
+                    columnNumber: 15
+                  },
+                  this
+                ) }, void 0, false, {
+                  fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+                  lineNumber: 112,
+                  columnNumber: 13
+                }, this)
+              ]
+            },
+            void 0,
+            true,
+            {
+              fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+              lineNumber: 84,
+              columnNumber: 11
+            },
+            this
+          )
+        },
+        void 0,
+        false,
+        {
+          fileName: "/app/dev-tools/src/AiroErrorBoundary.tsx",
+          lineNumber: 75,
+          columnNumber: 9
+        },
+        this
+      );
+    }
+    return this.props.children;
+  }
+}
 function Footer() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("footer", { className: "border-t bg-muted/30", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 6, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 7, children: [
     /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 8, children: [
@@ -1253,7 +1434,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-DbvLEJOQ.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-Da5N-i3-.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -1770,97 +1951,6 @@ function HomePage() {
     columnNumber: 5
   }, this);
 }
-const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-BqZHAH75.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
-const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-BBjFBoWQ.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
-const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-u7b1_b6L.js"), true ? __vite__mapDeps([5,1,2,6,7]) : void 0));
-const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-DXeC2riq.js"), true ? __vite__mapDeps([8,1,2,6]) : void 0));
-const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-6A95v7ei.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
-const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-CoQHwPoV.js"), true ? __vite__mapDeps([10,1,2,7,6]) : void 0));
-const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-KKDUnlS0.js"), true ? __vite__mapDeps([11,1,2]) : void 0));
-const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-JM60nQqe.js"), true ? __vite__mapDeps([12,1,2]) : void 0));
-const ResumeBuilderPage = reactExports.lazy(() => __vitePreload(() => import("./resume-builder-CyJmRgx7.js"), true ? __vite__mapDeps([13,1,2,6,7]) : void 0));
-const routes = [
-  {
-    path: "/",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 20 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 20,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/dashboard",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DashboardPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 24 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 24,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/simulator-live",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SimulatorLivePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 28 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 28,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/ai-coach",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AICoachPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 32 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 32,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/interview-prep",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(InterviewPrepPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 36 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 36,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/exercises",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ExercisesPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 40 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 40,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/progress",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ProgressPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 44 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 44,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/behavioral-metrics",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(BehavioralMetricsPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 48 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 48,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "/resume-builder",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ResumeBuilderPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 52 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 52,
-      columnNumber: 12
-    }, void 0)
-  },
-  {
-    path: "*",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 56 }, void 0, false, {
-      fileName: "/app/src/routes.tsx",
-      lineNumber: 56,
-      columnNumber: 12
-    }, void 0)
-  }
-];
 function Spinner({ className }) {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: `inline-block ${className || ""}`, "data-dev-file": "/app/src/components/Spinner.tsx", "data-dev-line": 7, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
     "svg",
@@ -1927,6 +2017,178 @@ function Spinner({ className }) {
     columnNumber: 5
   }, this);
 }
+const SpinnerFallback$1 = () => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex justify-center py-8 h-screen items-center", "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 7, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Spinner, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 8 }, void 0, false, {
+  fileName: "/app/src/routes.tsx",
+  lineNumber: 8,
+  columnNumber: 5
+}, void 0) }, void 0, false, {
+  fileName: "/app/src/routes.tsx",
+  lineNumber: 7,
+  columnNumber: 1
+}, void 0);
+const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-BqZHAH75.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
+const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-BBjFBoWQ.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
+const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-CGLnOfUa.js"), true ? __vite__mapDeps([5,1,2,6,7]) : void 0));
+const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-CwaXc4ab.js"), true ? __vite__mapDeps([8,1,2,6]) : void 0));
+const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-6A95v7ei.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
+const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-CSEAak_C.js"), true ? __vite__mapDeps([10,1,2,7,6]) : void 0));
+const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-KKDUnlS0.js"), true ? __vite__mapDeps([11,1,2]) : void 0));
+const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-JM60nQqe.js"), true ? __vite__mapDeps([12,1,2]) : void 0));
+const ResumeBuilderPage = reactExports.lazy(() => __vitePreload(() => import("./resume-builder-C4ksZE8s.js"), true ? __vite__mapDeps([13,1,2,6,7]) : void 0));
+const routes = [
+  {
+    path: "/",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 27 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 27,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/dashboard",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 31 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 31,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 31, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DashboardPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 31 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 31,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 31,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/simulator-live",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 35 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 35,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 35, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SimulatorLivePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 35 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 35,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 35,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/ai-coach",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 39 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 39,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 39, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AICoachPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 39 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 39,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 39,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/interview-prep",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 43 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 43,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 43, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(InterviewPrepPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 43 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 43,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 43,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/exercises",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 47 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 47,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 47, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ExercisesPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 47 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 47,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 47,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/progress",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 51 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 51,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 51, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ProgressPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 51 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 51,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 51,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/behavioral-metrics",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 55 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 55,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 55, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(BehavioralMetricsPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 55 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 55,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 55,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/resume-builder",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 59 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 59,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 59, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ResumeBuilderPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 59 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 59,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 59,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "*",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback$1, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 63 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 63,
+      columnNumber: 32
+    }, void 0), "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 63, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 63 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 63,
+      columnNumber: 163
+    }, void 0) }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 63,
+      columnNumber: 12
+    }, void 0)
+  }
+];
 const SpinnerFallback = () => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex justify-center py-8 h-screen items-center", "data-dev-file": "/app/src/App.tsx", "data-dev-line": 9, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Spinner, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 10 }, void 0, false, {
   fileName: "/app/src/App.tsx",
   lineNumber: 10,
@@ -1940,21 +2202,25 @@ const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 27 }, void 0, false, {
+      element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AiroErrorBoundary, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 19, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SpinnerFallback, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 20 }, void 0, false, {
         fileName: "/app/src/App.tsx",
-        lineNumber: 27,
-        columnNumber: 23
-      }, void 0), "data-dev-file": "/app/src/App.tsx", "data-dev-line": 27, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RootLayout, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 28, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Outlet, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 29 }, void 0, false, {
+        lineNumber: 20,
+        columnNumber: 29
+      }, void 0), "data-dev-file": "/app/src/App.tsx", "data-dev-line": 20, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RootLayout, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 21, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Outlet, { "data-dev-file": "/app/src/App.tsx", "data-dev-line": 22 }, void 0, false, {
         fileName: "/app/src/App.tsx",
-        lineNumber: 29,
+        lineNumber: 22,
+        columnNumber: 13
+      }, void 0) }, void 0, false, {
+        fileName: "/app/src/App.tsx",
+        lineNumber: 21,
         columnNumber: 11
       }, void 0) }, void 0, false, {
         fileName: "/app/src/App.tsx",
-        lineNumber: 28,
+        lineNumber: 20,
         columnNumber: 9
       }, void 0) }, void 0, false, {
         fileName: "/app/src/App.tsx",
-        lineNumber: 27,
+        lineNumber: 19,
         columnNumber: 3
       }, void 0),
       children: routes
@@ -1965,9 +2231,9 @@ const router = createBrowserRouter(
   }
 );
 function App() {
-  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RouterProvider2, { router, "data-dev-file": "/app/src/App.tsx", "data-dev-line": 40 }, void 0, false, {
+  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RouterProvider2, { router, "data-dev-file": "/app/src/App.tsx", "data-dev-line": 34 }, void 0, false, {
     fileName: "/app/src/App.tsx",
-    lineNumber: 40,
+    lineNumber: 34,
     columnNumber: 10
   }, this);
 }
