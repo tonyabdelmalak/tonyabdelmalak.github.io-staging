@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Brain, Target, MessageSquare, TrendingUp, Shield, Zap, Users, Award } from 'lucide-react';
+import { ArrowRight, Brain, Target, Zap, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
