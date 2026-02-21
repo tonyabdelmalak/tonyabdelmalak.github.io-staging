@@ -1,4 +1,4 @@
-# Interview Intelligence™ Platform
+# Interview Intelligence™ - AI-Powered Interview Prep Platform
 
 **AI-Powered Interview Preparation & Performance Platform**
 
