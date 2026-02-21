@@ -1,4 +1,4 @@
-import { j as jsxDevRuntimeExports } from "./vendor-CuCSxqBp.js";
+import { j as jsxDevRuntimeExports } from "./vendor-Cu2fM0-2.js";
 import "./preload-DYXzOcNn.js";
 function InterviewPrepPage() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(jsxDevRuntimeExports.Fragment, { children: [

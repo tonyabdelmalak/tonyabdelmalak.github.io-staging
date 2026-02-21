@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DlIiGZLB.js","assets/vendor-CuCSxqBp.js","assets/preload-DYXzOcNn.js","assets/_404-B0gLsZUB.js","assets/dashboard-QDFYYtB7.js","assets/simulator-live-XmC_GtQN.js","assets/ai-coach-JuW3rdCk.js","assets/interview-prep-FLTFR9W2.js","assets/exercises-BqTce6CD.js","assets/progress-DiuRcRdU.js","assets/behavioral-metrics-DwpEF9rR.js"])))=>i.map(i=>d[i]);
-import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-CuCSxqBp.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DbvLEJOQ.js","assets/vendor-Cu2fM0-2.js","assets/preload-DYXzOcNn.js","assets/_404-BqZHAH75.js","assets/dashboard-BBjFBoWQ.js","assets/simulator-live-u7b1_b6L.js","assets/textarea-Cs6fkvGK.js","assets/alert-DMslP0O7.js","assets/ai-coach-DXeC2riq.js","assets/interview-prep-6A95v7ei.js","assets/exercises-CoQHwPoV.js","assets/progress-KKDUnlS0.js","assets/behavioral-metrics-JM60nQqe.js","assets/resume-builder-CyJmRgx7.js"])))=>i.map(i=>d[i]);
+import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-Cu2fM0-2.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
 function Footer() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("footer", { className: "border-t bg-muted/30", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 6, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 7, children: [
@@ -953,49 +953,48 @@ function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Dashboard", href: "/dashboard" },
+    { name: "Resume Builder", href: "/resume-builder" },
     { name: "Live Simulator", href: "/simulator-live" },
-    { name: "AI Coach", href: "/ai-coach" },
-    { name: "Prep", href: "/interview-prep" },
     { name: "Exercises", href: "/exercises" },
     { name: "Progress", href: "/progress" },
     { name: "Metrics", href: "/behavioral-metrics" }
   ];
-  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("header", { className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 30, children: [
-    /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("nav", { className: "mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8", "aria-label": "Global", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 31, children: [
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:flex-1", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 33, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/", className: "-m-1.5 p-1.5 flex items-center gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 34, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "text-2xl font-bold text-primary", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 35, children: "ReflectivAI" }, void 0, false, {
+  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("header", { className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 29, children: [
+    /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("nav", { className: "mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8", "aria-label": "Global", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 30, children: [
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:flex-1", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 32, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/", className: "-m-1.5 p-1.5 flex items-center gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 33, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "text-2xl font-bold text-primary", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 34, children: "ReflectivAI" }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 35,
+        lineNumber: 34,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 34,
+        lineNumber: 33,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 33,
+        lineNumber: 32,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 40, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 39, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
         "button",
         {
           type: "button",
           className: "-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground",
           onClick: () => setMobileMenuOpen(!mobileMenuOpen),
           "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-          "data-dev-line": 41,
+          "data-dev-line": 40,
           children: [
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "sr-only", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 46, children: "Toggle menu" }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "sr-only", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 45, children: "Toggle menu" }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 46,
+              lineNumber: 45,
               columnNumber: 13
             }, this),
-            mobileMenuOpen ? /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(X, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 48 }, void 0, false, {
+            mobileMenuOpen ? /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(X, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 47 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 48,
+              lineNumber: 47,
               columnNumber: 13
-            }, this) : /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Menu, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 50 }, void 0, false, {
+            }, this) : /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Menu, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 49 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 50,
+              lineNumber: 49,
               columnNumber: 13
             }, this)
           ]
@@ -1004,126 +1003,126 @@ function Header() {
         true,
         {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 41,
+          lineNumber: 40,
           columnNumber: 11
         },
         this
       ) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 40,
+        lineNumber: 39,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:gap-x-8", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 56, children: navigation.map(
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:gap-x-8", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 55, children: navigation.map(
         (item) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
           Link,
           {
             to: item.href,
             className: "text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors",
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 58,
+            "data-dev-line": 57,
             children: item.name
           },
           item.name,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 58,
+            lineNumber: 57,
             columnNumber: 11
           },
           this
         )
       ) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 56,
+        lineNumber: 55,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:flex-1 lg:justify-end lg:gap-2 lg:items-center", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 69, children: [
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AIChat, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 70 }, void 0, false, {
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:flex-1 lg:justify-end lg:gap-2 lg:items-center", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 68, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AIChat, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 69 }, void 0, false, {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 70,
+          lineNumber: 69,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenu, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 71, children: [
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuTrigger, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 72, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Button, { variant: "ghost", size: "sm", className: "gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 73, children: [
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(User, { className: "h-4 w-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 74 }, void 0, false, {
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenu, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 70, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuTrigger, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 71, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Button, { variant: "ghost", size: "sm", className: "gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 72, children: [
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(User, { className: "h-4 w-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 73 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 74,
+              lineNumber: 73,
               columnNumber: 17
             }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 75, children: "Candidate" }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 74, children: "Candidate" }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 75,
+              lineNumber: 74,
               columnNumber: 17
             }, this)
           ] }, void 0, true, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 73,
+            lineNumber: 72,
             columnNumber: 15
           }, this) }, void 0, false, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 72,
+            lineNumber: 71,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuContent, { align: "end", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 78, children: [
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuLabel, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 79, children: "candidate@example.com" }, void 0, false, {
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuContent, { align: "end", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 77, children: [
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuLabel, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 78, children: "candidate@example.com" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 78,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 79 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
               lineNumber: 79,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 80 }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 80, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/dashboard", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 81, children: "Dashboard" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 81,
+              columnNumber: 17
+            }, this) }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
               lineNumber: 80,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 81, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/dashboard", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 82, children: "Dashboard" }, void 0, false, {
-              fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 82,
-              columnNumber: 17
-            }, this) }, void 0, false, {
-              fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 81,
-              columnNumber: 15
-            }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 84, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/progress", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 85, children: "Progress" }, void 0, false, {
-              fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 85,
-              columnNumber: 17
-            }, this) }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 83, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/progress", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 84, children: "Progress" }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
               lineNumber: 84,
+              columnNumber: 17
+            }, this) }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 83,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 87 }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 86 }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 86,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 87, children: "Sign out" }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
               lineNumber: 87,
-              columnNumber: 15
-            }, this),
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 88, children: "Sign out" }, void 0, false, {
-              fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 88,
               columnNumber: 15
             }, this)
           ] }, void 0, true, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 78,
+            lineNumber: 77,
             columnNumber: 13
           }, this)
         ] }, void 0, true, {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 71,
+          lineNumber: 70,
           columnNumber: 11
         }, this)
       ] }, void 0, true, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 69,
+        lineNumber: 68,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 31,
+      lineNumber: 30,
       columnNumber: 7
     }, this),
-    mobileMenuOpen && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 96, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "space-y-1 px-4 pb-3 pt-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 97, children: [
+    mobileMenuOpen && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 95, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "space-y-1 px-4 pb-3 pt-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 96, children: [
       navigation.map(
         (item) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
           Link,
@@ -1132,34 +1131,34 @@ function Header() {
             className: "block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 99,
+            "data-dev-line": 98,
             children: item.name
           },
           item.name,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 99,
+            lineNumber: 98,
             columnNumber: 11
           },
           this
         )
       ),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "border-t border-border pt-4 mt-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 108, children: [
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "px-3 py-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 109, children: [
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-sm font-medium", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 110, children: "Candidate" }, void 0, false, {
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "border-t border-border pt-4 mt-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 107, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "px-3 py-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 108, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-sm font-medium", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 109, children: "Candidate" }, void 0, false, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 110,
+            lineNumber: 109,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-xs text-muted-foreground", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 111, children: "candidate@example.com" }, void 0, false, {
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-xs text-muted-foreground", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 110, children: "candidate@example.com" }, void 0, false, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 111,
+            lineNumber: 110,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 109,
+          lineNumber: 108,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
@@ -1169,14 +1168,14 @@ function Header() {
             className: "block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 113,
+            "data-dev-line": 112,
             children: "Dashboard"
           },
           void 0,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 113,
+            lineNumber: 112,
             columnNumber: 15
           },
           this
@@ -1187,35 +1186,35 @@ function Header() {
             className: "block w-full text-left rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 120,
+            "data-dev-line": 119,
             children: "Sign out"
           },
           void 0,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 120,
+            lineNumber: 119,
             columnNumber: 15
           },
           this
         )
       ] }, void 0, true, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 108,
+        lineNumber: 107,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 97,
+      lineNumber: 96,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 96,
+      lineNumber: 95,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "/app/src/layouts/parts/Header.tsx",
-    lineNumber: 30,
+    lineNumber: 29,
     columnNumber: 5
   }, this);
 }
@@ -1254,7 +1253,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-DlIiGZLB.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-DbvLEJOQ.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -1771,84 +1770,93 @@ function HomePage() {
     columnNumber: 5
   }, this);
 }
-const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-B0gLsZUB.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
-const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-QDFYYtB7.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
-const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-XmC_GtQN.js"), true ? __vite__mapDeps([5,1,2]) : void 0));
-const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-JuW3rdCk.js"), true ? __vite__mapDeps([6,1,2]) : void 0));
-const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-FLTFR9W2.js"), true ? __vite__mapDeps([7,1,2]) : void 0));
-const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-BqTce6CD.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
-const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-DiuRcRdU.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
-const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-DwpEF9rR.js"), true ? __vite__mapDeps([10,1,2]) : void 0));
+const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-BqZHAH75.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
+const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-BBjFBoWQ.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
+const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-u7b1_b6L.js"), true ? __vite__mapDeps([5,1,2,6,7]) : void 0));
+const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-DXeC2riq.js"), true ? __vite__mapDeps([8,1,2,6]) : void 0));
+const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-6A95v7ei.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
+const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-CoQHwPoV.js"), true ? __vite__mapDeps([10,1,2,7,6]) : void 0));
+const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-KKDUnlS0.js"), true ? __vite__mapDeps([11,1,2]) : void 0));
+const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-JM60nQqe.js"), true ? __vite__mapDeps([12,1,2]) : void 0));
+const ResumeBuilderPage = reactExports.lazy(() => __vitePreload(() => import("./resume-builder-CyJmRgx7.js"), true ? __vite__mapDeps([13,1,2,6,7]) : void 0));
 const routes = [
   {
     path: "/",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 19 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(HomePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 20 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/dashboard",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DashboardPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 23 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DashboardPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 24 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/simulator-live",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SimulatorLivePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 27 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(SimulatorLivePage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 28 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/ai-coach",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AICoachPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 31 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AICoachPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 32 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/interview-prep",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(InterviewPrepPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 35 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(InterviewPrepPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 36 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/exercises",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ExercisesPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 39 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ExercisesPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 40 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/progress",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ProgressPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 43 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ProgressPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 44 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "/behavioral-metrics",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(BehavioralMetricsPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 47 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(BehavioralMetricsPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 48 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 47,
+      lineNumber: 48,
+      columnNumber: 12
+    }, void 0)
+  },
+  {
+    path: "/resume-builder",
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ResumeBuilderPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 52 }, void 0, false, {
+      fileName: "/app/src/routes.tsx",
+      lineNumber: 52,
       columnNumber: 12
     }, void 0)
   },
   {
     path: "*",
-    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 51 }, void 0, false, {
+    element: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(NotFoundPage, { "data-dev-file": "/app/src/routes.tsx", "data-dev-line": 56 }, void 0, false, {
       fileName: "/app/src/routes.tsx",
-      lineNumber: 51,
+      lineNumber: 56,
       columnNumber: 12
     }, void 0)
   }
@@ -2009,9 +2017,9 @@ export {
   Card as C,
   CardHeader as a,
   CardTitle as b,
-  cn as c,
-  Badge as d,
-  CardContent as e,
-  CardDescription as f,
+  CardDescription as c,
+  CardContent as d,
+  Badge as e,
+  cn as f,
   main as m
 };
