@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DUyPabeD.js","assets/vendor-CuCSxqBp.js","assets/preload-DYXzOcNn.js","assets/_404-B0gLsZUB.js","assets/dashboard-QDFYYtB7.js","assets/simulator-live-XmC_GtQN.js","assets/ai-coach-JuW3rdCk.js","assets/interview-prep-FLTFR9W2.js","assets/exercises-Bh9XDuGx.js","assets/progress-DiuRcRdU.js","assets/behavioral-metrics-DwpEF9rR.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DlIiGZLB.js","assets/vendor-CuCSxqBp.js","assets/preload-DYXzOcNn.js","assets/_404-B0gLsZUB.js","assets/dashboard-QDFYYtB7.js","assets/simulator-live-XmC_GtQN.js","assets/ai-coach-JuW3rdCk.js","assets/interview-prep-FLTFR9W2.js","assets/exercises-BqTce6CD.js","assets/progress-DiuRcRdU.js","assets/behavioral-metrics-DwpEF9rR.js"])))=>i.map(i=>d[i]);
 import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-CuCSxqBp.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
 function Footer() {
@@ -1254,7 +1254,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-DUyPabeD.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-DlIiGZLB.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -1776,7 +1776,7 @@ const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dash
 const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-XmC_GtQN.js"), true ? __vite__mapDeps([5,1,2]) : void 0));
 const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-JuW3rdCk.js"), true ? __vite__mapDeps([6,1,2]) : void 0));
 const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-FLTFR9W2.js"), true ? __vite__mapDeps([7,1,2]) : void 0));
-const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-Bh9XDuGx.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
+const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-BqTce6CD.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
 const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-DiuRcRdU.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
 const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-DwpEF9rR.js"), true ? __vite__mapDeps([10,1,2]) : void 0));
 const routes = [

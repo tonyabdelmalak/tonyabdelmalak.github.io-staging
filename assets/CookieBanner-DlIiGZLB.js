@@ -1,5 +1,5 @@
 import { r as reactExports, j as jsxDevRuntimeExports } from "./vendor-CuCSxqBp.js";
-import { B as Button } from "./main-DyAg0H93.js";
+import { B as Button } from "./main-DPyK4H_8.js";
 import "./preload-DYXzOcNn.js";
 const COOKIE_CONSENT_KEY = "c2_analytics_consent";
 const COOKIE_CONSENT_EXPIRES_DAYS = 365;
