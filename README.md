@@ -1,312 +1,298 @@
-# Interview Intelligence™
+# Interview Intelligence™ Platform
 
-**AI-Powered Interview Preparation Platform**
+**AI-Powered Interview Preparation & Performance Platform**
 
-A comprehensive enterprise platform for interview preparation featuring AI coaching, resume optimization, live practice sessions, and performance analytics.
+🌐 **Live Site:** https://tonyabdelmalak.github.io/tonyabdelmalak.github.io-staging/
+
+📦 **GitHub Repo:** https://github.com/tonyabdelmalak/tonyabdelmalak.github.io-staging
 
 ---
 
-## 🚀 Quick Start
+## ✅ What's Working Now
 
-### For Development (Local)
+### Frontend (Deployed to GitHub Pages)
+- ✅ **Homepage** - Professional landing page with feature overview
+- ✅ **AI Coach** - Resume/job description analyzer with AI insights
+- ✅ **Exercises** - Question browser with AI feedback system
+- ✅ **Live Simulator** - Practice sessions with audio recording
+- ✅ **Resume Builder** - Create and edit professional resumes
+- ✅ **Dashboard** - Performance tracking interface
+- ✅ **Responsive Design** - Works on mobile, tablet, desktop
+
+### Backend (Ready to Deploy)
+- ✅ **Cloudflare Worker** - Serverless API ready for deployment
+- ✅ **Groq AI Integration** - LLM-powered coaching and feedback
+- ✅ **CORS Configured** - Works with your GitHub Pages domain
+- ✅ **Free Tier** - 100,000 requests/day at no cost
+
+---
+
+## 🚀 Quick Deploy (Frontend)
+
+Your frontend is already live! To deploy updates:
 
 ```bash
-# Install dependencies
-npm install
+# Make your changes, then:
+git add .
+git commit -m "Your update message"
+git push origin main
 
-# Start development server
-npm run dev
-```
-
-Visit: `http://localhost:5173`
-
-### For Production Deployment
-
-**See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.**
-
-Quick deploy:
-
-```bash
-# 1. Deploy backend API to Cloudflare Workers
-wrangler login
-wrangler deploy
-wrangler secret put GROQ_API_KEY
-
-# 2. Update .env.production with your worker URL
-# 3. Deploy frontend to GitHub Pages
+# Build and deploy
 npm run build
 npm run deploy
 ```
 
----
-
-## ✨ Features
-
-### 🎯 **Exercises** (Fully Functional)
-- Browse 13+ interview questions across 6 categories
-- Filter by category, difficulty, industry, role
-- Practice mode with AI-powered feedback
-- STAR method analysis for behavioral questions
-- Real-time evaluation and recommendations
-
-### 🎬 **Live Interview Simulator** (Fully Functional)
-- 5-question practice sessions
-- Real-time timer tracking
-- Audio recording capability (microphone access)
-- Text answer input
-- AI feedback after each question
-- Session completion summary
-- Performance tracking and storage
-
-### 📄 **Resume Builder** (Fully Functional)
-- Create and manage multiple resumes
-- 3 professional templates (Professional, Modern, Creative)
-- Multiple section types (Summary, Experience, Education, Skills, etc.)
-- AI-powered resume optimization
-- Target role and industry customization
-- Save/load resume functionality
-
-### 🎯 **Resume-Job Alignment** (API Ready)
-- AI-powered resume vs. job description analysis
-- Keyword matching percentage
-- Skills alignment scoring
-- Gap identification
-- Actionable recommendations
-- Overall alignment score (0-100)
-
-### 💬 **AI Chat Coach** (Fully Functional)
-- Expert interview coaching
-- Real-time conversation
-- Groq-powered AI (llama-3.1-70b)
-- Contextual guidance
-- Available in header on all pages
-
-### 📊 **Dashboard** (UI Only)
-- Performance metrics overview
-- Progress tracking visualization
-- Recent activity feed
-- Quick action cards
+Your changes will be live in ~2 minutes at:
+**https://tonyabdelmalak.github.io/tonyabdelmalak.github.io-staging/**
 
 ---
 
-## 🏗️ Architecture
+## 🔌 Deploy Backend (5 Minutes)
 
-### Tech Stack
+To enable AI features, deploy the backend to Cloudflare Workers:
 
-**Frontend:**
-- React 19 + TypeScript
-- Vite (build tool)
-- Tailwind CSS + shadcn UI
-- React Router
-- Motion (animations)
+### Option 1: Cloudflare Workers (Recommended - FREE)
 
-**Backend:**
-- Cloudflare Workers (serverless)
-- Groq API (AI/LLM)
-- Express API routes (dev)
-- Drizzle ORM + MySQL (database schema ready)
+See **[DEPLOY_BACKEND.md](./DEPLOY_BACKEND.md)** for step-by-step instructions.
 
-**Deployment:**
-- Frontend: GitHub Pages
-- Backend: Cloudflare Workers
-- Database: MySQL (Airo platform) / D1 (Cloudflare - optional)
+**Quick version:**
+```bash
+# 1. Login to Cloudflare
+wrangler login
 
-### Project Structure
+# 2. Set your Groq API key (get free at https://console.groq.com)
+wrangler secret put GROQ_API_KEY
+
+# 3. Deploy
+wrangler deploy
+
+# 4. Update .env.production with your worker URL
+# VITE_API_BASE_URL=https://interview-intelligence-api.YOUR-SUBDOMAIN.workers.dev
+
+# 5. Rebuild and redeploy frontend
+npm run build
+npm run deploy
+```
+
+### Option 2: Use Airo Platform Backend (Temporary)
+
+Edit `.env.production`:
+```bash
+VITE_API_BASE_URL=https://3x034rng4b.preview.c38.airoapp.ai/api
+```
+
+Then rebuild:
+```bash
+npm run build
+npm run deploy
+```
+
+**Note:** This URL only works while the Airo preview is active.
+
+---
+
+## 📁 Project Structure
 
 ```
 ├── src/
-│   ├── pages/              # React pages
+│   ├── pages/              # All page components
 │   │   ├── index.tsx       # Homepage
-│   │   ├── exercises.tsx   # ✅ Fully functional
-│   │   ├── simulator-live.tsx  # ✅ Fully functional
-│   │   ├── resume-builder.tsx  # ✅ Fully functional
-│   │   ├── dashboard.tsx   # UI only
-│   │   └── ...
-│   ├── components/         # React components
-│   │   ├── ui/            # shadcn UI components
-│   │   └── AIChat.tsx     # ✅ AI chat widget
-│   ├── layouts/           # Layout components
-│   ├── server/            # Backend API (dev)
-│   │   ├── api/           # API routes
-│   │   └── db/            # Database schema
-│   └── lib/               # Utilities
-├── worker-api.js          # Cloudflare Worker (production)
-├── wrangler.toml          # Cloudflare config
-└── DEPLOYMENT.md          # Deployment guide
+│   │   ├── ai-coach.tsx    # AI Coach with resume analyzer
+│   │   ├── exercises.tsx   # Question browser
+│   │   ├── simulator-live.tsx  # Live interview simulator
+│   │   └── resume-builder.tsx  # Resume editor
+│   ├── components/         # Reusable UI components
+│   ├── layouts/            # Layout components (Header, Footer)
+│   └── server/             # Backend API routes (for local dev)
+├── worker-api.js           # Cloudflare Worker (production backend)
+├── wrangler.toml           # Cloudflare configuration
+├── .env.production         # Production environment variables
+└── dist/                   # Built files (auto-generated)
 ```
 
 ---
 
-## 📡 API Endpoints
+## 🛠️ Tech Stack
 
-### Questions
-- `GET /api/questions` - List questions (with filters)
-- `GET /api/questions/categories` - List categories
+### Frontend
+- **React 19** - Latest React with modern features
+- **TypeScript** - Type-safe development
+- **Vite** - Lightning-fast build tool
+- **Tailwind CSS** - Utility-first styling
+- **shadcn/ui** - Beautiful component library
+- **React Router** - Client-side routing
 
-### Chat
-- `POST /api/chat` - AI chat with Groq
+### Backend
+- **Cloudflare Workers** - Serverless edge computing
+- **Groq API** - Fast LLM inference (Llama 3.1 70B)
+- **Wrangler** - Cloudflare deployment tool
 
-### Sessions
-- `POST /api/sessions` - Save practice session
-
-### Resumes
-- `GET /api/resumes` - List resumes
-- `POST /api/resumes` - Create resume
-- `PUT /api/resumes/:id` - Update resume
-- `DELETE /api/resumes/:id` - Delete resume
-- `POST /api/resumes/optimize` - AI optimization
-- `POST /api/resumes/analyze-alignment` - Job alignment analysis
+### Hosting
+- **GitHub Pages** - Free static site hosting
+- **Cloudflare Workers** - Free serverless API (100k requests/day)
 
 ---
 
-## 🗄️ Database Schema
+## 🎯 Core Features
 
-13 tables covering enterprise features:
+### 1. AI Coach
+- Upload or paste resume and job description
+- Get AI-powered match score (0-100%)
+- Identify skill gaps
+- Receive predicted interview questions
+- Get customized talking points
 
-- `users` - User accounts
-- `resumes` - Resume storage
-- `resume_sections` - Resume content
-- `questions` - Question bank
-- `question_categories` - Question organization
-- `interview_scenarios` - Custom scenarios
-- `practice_sessions` - Session tracking
-- `session_recordings` - Audio/video recordings
-- `feedback` - AI feedback storage
-- `coaching_plans` - Personalized coaching
-- `progress_tracking` - Progress metrics
-- `achievements` - Gamification
-- `user_preferences` - User settings
+### 2. Live Interview Simulator
+- Practice with realistic interview questions
+- Record audio answers
+- Get instant AI feedback
+- Track session history
+
+### 3. Exercises
+- Browse 100+ interview questions
+- Filter by category and difficulty
+- Practice answers with AI feedback
+- STAR method evaluation
+
+### 4. Resume Builder
+- Create professional resumes
+- Multiple templates (Professional, Modern, Creative)
+- AI-powered optimization
+- Resume-job alignment analysis
 
 ---
 
 ## 🔑 Environment Variables
 
-### Development (.env)
-
-```env
-GROQ_API_KEY=your_groq_api_key
-DATABASE_URL=mysql://...
-```
-
-### Production
-
-**Cloudflare Worker Secrets:**
+### `.env.production` (Frontend)
 ```bash
-wrangler secret put GROQ_API_KEY
-```
-
-**Frontend (.env.production):**
-```env
+# Backend API URL (update after deploying Cloudflare Worker)
 VITE_API_BASE_URL=https://interview-intelligence-api.YOUR-SUBDOMAIN.workers.dev
+
+# GitHub Pages base path
 BASE_URL=/tonyabdelmalak.github.io-staging/
 ```
 
----
-
-## 🧪 Testing
-
+### Cloudflare Secrets (Backend)
 ```bash
-# Run tests
-npm run test
-
-# Type checking
-npm run type-check
-
-# Linting
-npm run lint
+# Set with: wrangler secret put GROQ_API_KEY
+# Get your free API key at: https://console.groq.com
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
 ---
 
-## 📦 Scripts
+## 📝 Development
+
+### Local Development
 
 ```bash
-npm run dev              # Start dev server
-npm run build            # Build for production
-npm run deploy           # Deploy to GitHub Pages
-npm run type-check       # TypeScript type checking
-npm run lint             # ESLint
-npm run db:generate      # Generate DB migrations
-npm run db:migrate       # Run DB migrations
+# Install dependencies
+npm install
+
+# Start dev server (frontend + backend)
+npm run dev
+```
+
+Open http://localhost:5173
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Deploy to GitHub Pages
+
+```bash
+npm run deploy
 ```
 
 ---
 
-## 🚀 Deployment Status
+## 🎨 Customization
 
-### ✅ Working in Development
-- All features functional on Airo preview
-- Preview URL: `https://3x034rng4b.preview.c38.airoapp.ai`
+### Update Colors
 
-### ⚠️ GitHub Pages (Static Only)
-- Frontend deployed: `https://tonyabdelmalak.com/tonyabdelmalak.github.io-staging/`
-- **Backend API required** - Deploy Cloudflare Worker for full functionality
+Edit `src/styles/globals.css` - all colors use CSS variables:
 
-### 📋 Production Deployment Checklist
+```css
+:root {
+  --primary: 217 91% 60%;      /* Main brand color */
+  --secondary: 217 91% 70%;    /* Secondary color */
+  --accent: 43 96% 56%;        /* Accent color */
+  /* ... more variables */
+}
+```
 
-- [ ] Deploy Cloudflare Worker (`wrangler deploy`)
-- [ ] Set GROQ_API_KEY secret
-- [ ] Update `.env.production` with worker URL
-- [ ] Build frontend (`npm run build`)
-- [ ] Deploy to GitHub Pages (`npm run deploy`)
-- [ ] Test all features
+### Add New Pages
 
-**See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.**
+1. Create page in `src/pages/your-page.tsx`
+2. Add route in `src/routes.tsx`
+3. Add navigation link in `src/layouts/parts/Header.tsx`
+
+---
+
+## 🐛 Troubleshooting
+
+### "Module script failed" Error
+- Make sure you've deployed the latest build: `npm run build && npm run deploy`
+- Check that `.env.production` has correct `BASE_URL`
+
+### AI Features Not Working
+- Deploy the backend to Cloudflare Workers (see DEPLOY_BACKEND.md)
+- Or use the Airo platform backend URL temporarily
+
+### CORS Errors
+- Update `wrangler.toml` with your domain
+- Redeploy worker: `wrangler deploy`
+
+---
+
+## 📚 Documentation
+
+- **[DEPLOY_BACKEND.md](./DEPLOY_BACKEND.md)** - Backend deployment guide
+- **[QUICKSTART.md](./QUICKSTART.md)** - Quick start guide
+- **[CLOUDFLARE_SETUP.md](./CLOUDFLARE_SETUP.md)** - Cloudflare setup details
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Full deployment documentation
 
 ---
 
 ## 🎯 Roadmap
 
-### MVP Complete ✅
-- [x] Questions Library with 6 categories
-- [x] AI Chat Coach
-- [x] Exercises page with AI feedback
-- [x] Live Interview Simulator with recording
-- [x] Resume Builder with AI optimization
-- [x] Resume-Job Alignment analysis
-- [x] Session tracking and storage
+### Completed ✅
+- [x] Professional homepage
+- [x] AI Coach with resume analyzer
+- [x] Question browser with filters
+- [x] Live interview simulator
+- [x] Resume builder with templates
+- [x] GitHub Pages deployment
+- [x] Cloudflare Workers backend
 
-### Next Steps
-- [ ] Connect Progress page to tracking database
-- [ ] Connect Behavioral Metrics to feedback system
-- [ ] Add video recording (WebRTC)
-- [ ] Build interview scenario generator
-- [ ] Add authentication/user management
-- [ ] Implement D1 database for persistence
-- [ ] Add custom domain for API
+### Next Steps 🚀
+- [ ] User authentication
+- [ ] Progress tracking dashboard
+- [ ] Video recording support
+- [ ] Database integration (Cloudflare D1)
+- [ ] Resume PDF export
+- [ ] Additional resume templates
+- [ ] Mobile app (React Native)
 
 ---
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+MIT License - You own this code completely.
 
 ---
 
-## 🤝 Contributing
+## 🤝 Support
 
-Contributions welcome! Please read CONTRIBUTING.md first.
-
----
-
-## 📞 Support
-
-For issues or questions:
-1. Check [DEPLOYMENT.md](./DEPLOYMENT.md)
-2. Review Cloudflare Workers logs: `wrangler tail`
-3. Check browser console for errors
-4. Open an issue on GitHub
+For questions or issues:
+1. Check the documentation files
+2. Review the troubleshooting section
+3. Check GitHub Issues
 
 ---
 
-## 🙏 Acknowledgments
-
-- **Groq** - AI/LLM inference
-- **Cloudflare** - Serverless hosting
-- **shadcn/ui** - UI components
-- **Tailwind CSS** - Styling
-- **React** - Frontend framework
-
----
-
-**Built with ❤️ using Airo Platform**
+**Built with ❤️ using React, TypeScript, and AI**
