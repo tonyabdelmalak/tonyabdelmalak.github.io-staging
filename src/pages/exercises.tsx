@@ -42,6 +42,7 @@ export default function ExercisesPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [practiceMode, setPracticeMode] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
