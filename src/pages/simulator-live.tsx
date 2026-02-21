@@ -57,23 +57,48 @@ export default function SimulatorLivePage() {
       const response = await fetch(
         `/api/questions?category=${selectedCategory}&difficulty=${selectedDifficulty}`
       );
-      const data = await response.json();
+      
+      let questionsData: Question[] = [];
+      
+      if (!response.ok) {
+        // Use fallback questions if API fails
+        console.warn('API failed, using fallback questions');
+        questionsData = getFallbackQuestions();
+        setMessage({ type: 'success', text: 'Using demo questions (database not connected)' });
+      } else {
+        const data = await response.json();
+        questionsData = data.questions || [];
+      }
 
-      if (data.questions.length === 0) {
+      if (questionsData.length === 0) {
         setMessage({ type: 'error', text: 'No questions found for this category' });
         return;
       }
 
       // Take first 5 questions for the session
-      setQuestions(data.questions.slice(0, 5));
+      setQuestions(questionsData.slice(0, 5));
       setSessionActive(true);
       setCurrentQuestionIndex(0);
       setSessionQuestions([]);
       setSessionComplete(false);
       setQuestionStartTime(Date.now());
-      setMessage(null);
+      setTimeout(() => setMessage(null), 3000); // Clear message after 3 seconds
     } catch (error) {
-      setMessage({ type: 'error', text: 'Failed to start session' });
+      console.error('Failed to start session:', error);
+      // Use fallback questions on error
+      const fallbackQuestions = getFallbackQuestions();
+      if (fallbackQuestions.length > 0) {
+        setQuestions(fallbackQuestions.slice(0, 5));
+        setSessionActive(true);
+        setCurrentQuestionIndex(0);
+        setSessionQuestions([]);
+        setSessionComplete(false);
+        setQuestionStartTime(Date.now());
+        setMessage({ type: 'success', text: 'Using demo questions (database not connected)' });
+        setTimeout(() => setMessage(null), 3000);
+      } else {
+        setMessage({ type: 'error', text: 'Failed to start session' });
+      }
     }
   };
 
