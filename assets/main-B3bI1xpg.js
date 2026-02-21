@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-CH0QULx4.js","assets/vendor-Db6UC8BF.js","assets/preload-DYXzOcNn.js","assets/_404-Bo-oUTJS.js","assets/dashboard-Dn341Wy_.js","assets/simulator-live-CGKbl7Yh.js","assets/ai-coach-CWiSa9Cb.js","assets/interview-prep-DQtzFMJ7.js","assets/exercises-OtBSzo1b.js","assets/progress-DgGOJRNw.js","assets/behavioral-metrics-sC8bmGqP.js"])))=>i.map(i=>d[i]);
-import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, b as SubTrigger2, C as ChevronRight, d as SubContent2, P as Portal2, e as Content2, I as Item2, f as CheckboxItem2, g as ItemIndicator2, h as Check, R as RadioItem2, i as Circle, k as Label2, l as Separator2, m as Root2, T as Trigger, X, n as Menu, U as User, A as ArrowRight, B as Brain, o as Target, Z as Zap, p as Award, q as createBrowserRouter, s as RouterProvider2, O as Outlet, Q as QueryClient, u as ReactDOM, v as React, w as QueryClientProvider } from "./vendor-Db6UC8BF.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-rDfKceTh.js","assets/vendor-sVUzmLDa.js","assets/preload-DYXzOcNn.js","assets/_404-Dr1hsJXM.js","assets/dashboard-CAACzkw3.js","assets/simulator-live-BxhMA0aq.js","assets/ai-coach-Iepuo6Lu.js","assets/interview-prep-DDMdmBhu.js","assets/exercises-G6m7yVt_.js","assets/progress-CuhBcuNX.js","assets/behavioral-metrics-Bz-TWnCE.js"])))=>i.map(i=>d[i]);
+import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, R as Root, V as Viewport, C as Corner, b as ScrollAreaScrollbar, d as ScrollAreaThumb, e as MessageSquare, X, f as Send, g as SubTrigger2, h as ChevronRight, i as SubContent2, P as Portal2, k as Content2, I as Item2, l as CheckboxItem2, m as ItemIndicator2, n as Check, o as RadioItem2, p as Circle, q as Label2, s as Separator2, u as Root2, T as Trigger, v as Menu, U as User, A as ArrowRight, B as Brain, w as Target, Z as Zap, x as Award, y as createBrowserRouter, z as RouterProvider2, O as Outlet, Q as QueryClient, D as ReactDOM, E as React, F as QueryClientProvider } from "./vendor-sVUzmLDa.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
 function Footer() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("footer", { className: "border-t bg-muted/30", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 6, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 7, children: [
@@ -259,6 +259,471 @@ const Button = reactExports.forwardRef(
   }
 );
 Button.displayName = "Button";
+const Card = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    "div",
+    {
+      ref,
+      className: cn(
+        "rounded-lg border bg-card text-card-foreground shadow-sm",
+        className
+      ),
+      ...props
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/card.tsx",
+      lineNumber: 9,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+Card.displayName = "Card";
+const CardHeader = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    "div",
+    {
+      ref,
+      className: cn("flex flex-col space-y-1.5 p-6", className),
+      ...props
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/card.tsx",
+      lineNumber: 24,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+CardHeader.displayName = "CardHeader";
+const CardTitle = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    "div",
+    {
+      ref,
+      className: cn(
+        "text-2xl font-semibold leading-none tracking-tight",
+        className
+      ),
+      ...props
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/card.tsx",
+      lineNumber: 36,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+CardTitle.displayName = "CardTitle";
+const CardDescription = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    "div",
+    {
+      ref,
+      className: cn("text-sm text-muted-foreground", className),
+      ...props
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/card.tsx",
+      lineNumber: 51,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+CardDescription.displayName = "CardDescription";
+const CardContent = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { ref, className: cn("p-6 pt-0", className), ...props }, void 0, false, {
+    fileName: "/app/src/components/ui/card.tsx",
+    lineNumber: 63,
+    columnNumber: 3
+  }, void 0)
+);
+CardContent.displayName = "CardContent";
+const CardFooter = reactExports.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    "div",
+    {
+      ref,
+      className: cn("flex items-center p-6 pt-0", className),
+      ...props
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/card.tsx",
+      lineNumber: 71,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+CardFooter.displayName = "CardFooter";
+const ScrollArea = reactExports.forwardRef(
+  ({ className, children, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    Root,
+    {
+      ref,
+      className: cn("relative overflow-hidden", className),
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Viewport, { className: "h-full w-full rounded-[inherit]", children }, void 0, false, {
+          fileName: "/app/src/components/ui/scroll-area.tsx",
+          lineNumber: 15,
+          columnNumber: 5
+        }, void 0),
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ScrollBar, {}, void 0, false, {
+          fileName: "/app/src/components/ui/scroll-area.tsx",
+          lineNumber: 18,
+          columnNumber: 5
+        }, void 0),
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Corner, {}, void 0, false, {
+          fileName: "/app/src/components/ui/scroll-area.tsx",
+          lineNumber: 19,
+          columnNumber: 5
+        }, void 0)
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "/app/src/components/ui/scroll-area.tsx",
+      lineNumber: 10,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+ScrollArea.displayName = Root.displayName;
+const ScrollBar = reactExports.forwardRef(
+  ({ className, orientation = "vertical", ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+    ScrollAreaScrollbar,
+    {
+      ref,
+      orientation,
+      className: cn(
+        "flex touch-none select-none transition-colors",
+        orientation === "vertical" && "h-full w-2.5 border-l border-l-transparent p-[1px]",
+        orientation === "horizontal" && "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+        className
+      ),
+      ...props,
+      children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ScrollAreaThumb, { className: "relative flex-1 rounded-full bg-border" }, void 0, false, {
+        fileName: "/app/src/components/ui/scroll-area.tsx",
+        lineNumber: 41,
+        columnNumber: 5
+      }, void 0)
+    },
+    void 0,
+    false,
+    {
+      fileName: "/app/src/components/ui/scroll-area.tsx",
+      lineNumber: 28,
+      columnNumber: 3
+    },
+    void 0
+  )
+);
+ScrollBar.displayName = ScrollAreaScrollbar.displayName;
+function AIChat() {
+  const [isOpen, setIsOpen] = reactExports.useState(false);
+  const [messages, setMessages] = reactExports.useState(
+    [
+      {
+        role: "assistant",
+        content: "Hi! I'm your AI Interview Coach. I can help you prepare for interviews, practice responses, and improve your performance. What would you like to work on today?"
+      }
+    ]
+  );
+  const [input, setInput] = reactExports.useState("");
+  const [isLoading, setIsLoading] = reactExports.useState(false);
+  const scrollRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+  const sendMessage = async () => {
+    if (!input.trim() || isLoading) return;
+    const userMessage = { role: "user", content: input };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...messages, userMessage]
+        })
+      });
+      if (!response.ok) {
+        throw new Error("Failed to get response");
+      }
+      const data = await response.json();
+      const assistantMessage = {
+        role: "assistant",
+        content: data.choices[0].message.content
+      };
+      setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      setMessages(
+        (prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "I'm sorry, I encountered an error. Please try again."
+          }
+        ]
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  };
+  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(jsxDevRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+      Button,
+      {
+        onClick: () => setIsOpen(!isOpen),
+        size: "sm",
+        className: "gap-2",
+        variant: isOpen ? "secondary" : "default",
+        "data-dev-file": "/app/src/components/AIChat.tsx",
+        "data-dev-line": 82,
+        children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(MessageSquare, { className: "h-4 w-4", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 88 }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 88,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "hidden sm:inline", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 89, children: "AI Coach" }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 89,
+            columnNumber: 9
+          }, this)
+        ]
+      },
+      void 0,
+      true,
+      {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 82,
+        columnNumber: 7
+      },
+      this
+    ),
+    isOpen && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "fixed bottom-4 right-4 z-50 w-[90vw] max-w-md", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 94, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Card, { className: "flex flex-col h-[600px] max-h-[80vh] shadow-2xl", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 95, children: [
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 97, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex items-center gap-2", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 98, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(MessageSquare, { className: "h-5 w-5", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 99 }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 99,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("h3", { className: "font-semibold", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 100, children: "AI Interview Coach" }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 100,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "/app/src/components/AIChat.tsx",
+          lineNumber: 98,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+          Button,
+          {
+            variant: "ghost",
+            size: "sm",
+            onClick: () => setIsOpen(false),
+            className: "h-8 w-8 p-0 hover:bg-primary-foreground/20 text-primary-foreground",
+            "data-dev-file": "/app/src/components/AIChat.tsx",
+            "data-dev-line": 102,
+            children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(X, { className: "h-4 w-4", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 108 }, void 0, false, {
+              fileName: "/app/src/components/AIChat.tsx",
+              lineNumber: 108,
+              columnNumber: 17
+            }, this)
+          },
+          void 0,
+          false,
+          {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 102,
+            columnNumber: 15
+          },
+          this
+        )
+      ] }, void 0, true, {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 97,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(ScrollArea, { className: "flex-1 p-4", ref: scrollRef, "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 113, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "space-y-4", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 114, children: [
+        messages.map(
+          (msg, idx) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+            "div",
+            {
+              className: `flex ${msg.role === "user" ? "justify-end" : "justify-start"}`,
+              "data-dev-file": "/app/src/components/AIChat.tsx",
+              "data-dev-line": 116,
+              children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+                "div",
+                {
+                  className: `max-w-[80%] rounded-lg p-3 ${msg.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`,
+                  "data-dev-file": "/app/src/components/AIChat.tsx",
+                  "data-dev-line": 120,
+                  children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-sm whitespace-pre-wrap", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 127, children: msg.content }, void 0, false, {
+                    fileName: "/app/src/components/AIChat.tsx",
+                    lineNumber: 127,
+                    columnNumber: 23
+                  }, this)
+                },
+                void 0,
+                false,
+                {
+                  fileName: "/app/src/components/AIChat.tsx",
+                  lineNumber: 120,
+                  columnNumber: 21
+                },
+                this
+              )
+            },
+            idx,
+            false,
+            {
+              fileName: "/app/src/components/AIChat.tsx",
+              lineNumber: 116,
+              columnNumber: 15
+            },
+            this
+          )
+        ),
+        isLoading && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex justify-start", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 132, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "bg-muted rounded-lg p-3", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 133, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex gap-1", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 134, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "w-2 h-2 bg-foreground/40 rounded-full animate-bounce", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 135 }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 135,
+            columnNumber: 25
+          }, this),
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "w-2 h-2 bg-foreground/40 rounded-full animate-bounce", style: { animationDelay: "0.1s" }, "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 136 }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 136,
+            columnNumber: 25
+          }, this),
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "w-2 h-2 bg-foreground/40 rounded-full animate-bounce", style: { animationDelay: "0.2s" }, "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 137 }, void 0, false, {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 137,
+            columnNumber: 25
+          }, this)
+        ] }, void 0, true, {
+          fileName: "/app/src/components/AIChat.tsx",
+          lineNumber: 134,
+          columnNumber: 23
+        }, this) }, void 0, false, {
+          fileName: "/app/src/components/AIChat.tsx",
+          lineNumber: 133,
+          columnNumber: 21
+        }, this) }, void 0, false, {
+          fileName: "/app/src/components/AIChat.tsx",
+          lineNumber: 132,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 114,
+        columnNumber: 15
+      }, this) }, void 0, false, {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 113,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "p-4 border-t", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 146, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex gap-2", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 147, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+          "input",
+          {
+            type: "text",
+            value: input,
+            onChange: (e) => setInput(e.target.value),
+            onKeyPress: handleKeyPress,
+            placeholder: "Ask about interview tips, practice questions...",
+            className: "flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground",
+            disabled: isLoading,
+            "data-dev-file": "/app/src/components/AIChat.tsx",
+            "data-dev-line": 148
+          },
+          void 0,
+          false,
+          {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 148,
+            columnNumber: 17
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+          Button,
+          {
+            onClick: sendMessage,
+            disabled: !input.trim() || isLoading,
+            size: "sm",
+            className: "px-3",
+            "data-dev-file": "/app/src/components/AIChat.tsx",
+            "data-dev-line": 157,
+            children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Send, { className: "h-4 w-4", "data-dev-file": "/app/src/components/AIChat.tsx", "data-dev-line": 163 }, void 0, false, {
+              fileName: "/app/src/components/AIChat.tsx",
+              lineNumber: 163,
+              columnNumber: 19
+            }, this)
+          },
+          void 0,
+          false,
+          {
+            fileName: "/app/src/components/AIChat.tsx",
+            lineNumber: 157,
+            columnNumber: 17
+          },
+          this
+        )
+      ] }, void 0, true, {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 147,
+        columnNumber: 15
+      }, this) }, void 0, false, {
+        fileName: "/app/src/components/AIChat.tsx",
+        lineNumber: 146,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "/app/src/components/AIChat.tsx",
+      lineNumber: 95,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "/app/src/components/AIChat.tsx",
+      lineNumber: 94,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "/app/src/components/AIChat.tsx",
+    lineNumber: 80,
+    columnNumber: 5
+  }, this);
+}
 const DropdownMenu = Root2;
 const DropdownMenuTrigger = Trigger;
 const DropdownMenuSubTrigger = reactExports.forwardRef(
@@ -495,42 +960,42 @@ function Header() {
     { name: "Progress", href: "/progress" },
     { name: "Metrics", href: "/behavioral-metrics" }
   ];
-  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("header", { className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 29, children: [
-    /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("nav", { className: "mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8", "aria-label": "Global", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 30, children: [
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:flex-1", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 32, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/", className: "-m-1.5 p-1.5 flex items-center gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 33, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "text-2xl font-bold text-primary", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 34, children: "ReflectivAI" }, void 0, false, {
+  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("header", { className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 30, children: [
+    /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("nav", { className: "mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8", "aria-label": "Global", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 31, children: [
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:flex-1", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 33, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/", className: "-m-1.5 p-1.5 flex items-center gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 34, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "text-2xl font-bold text-primary", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 35, children: "ReflectivAI" }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 34,
+        lineNumber: 35,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 39, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "flex lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 40, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
         "button",
         {
           type: "button",
           className: "-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground",
           onClick: () => setMobileMenuOpen(!mobileMenuOpen),
           "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-          "data-dev-line": 40,
+          "data-dev-line": 41,
           children: [
-            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "sr-only", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 45, children: "Toggle menu" }, void 0, false, {
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { className: "sr-only", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 46, children: "Toggle menu" }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 45,
+              lineNumber: 46,
               columnNumber: 13
             }, this),
-            mobileMenuOpen ? /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(X, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 47 }, void 0, false, {
+            mobileMenuOpen ? /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(X, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 48 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 47,
+              lineNumber: 48,
               columnNumber: 13
-            }, this) : /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Menu, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 49 }, void 0, false, {
+            }, this) : /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Menu, { className: "h-6 w-6", "aria-hidden": "true", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 50 }, void 0, false, {
               fileName: "/app/src/layouts/parts/Header.tsx",
-              lineNumber: 49,
+              lineNumber: 50,
               columnNumber: 13
             }, this)
           ]
@@ -539,119 +1004,126 @@ function Header() {
         true,
         {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 40,
+          lineNumber: 41,
           columnNumber: 11
         },
         this
       ) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 39,
+        lineNumber: 40,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:gap-x-8", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 55, children: navigation.map(
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:gap-x-8", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 56, children: navigation.map(
         (item) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
           Link,
           {
             to: item.href,
             className: "text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors",
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 57,
+            "data-dev-line": 58,
             children: item.name
           },
           item.name,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 57,
+            lineNumber: 58,
             columnNumber: 11
           },
           this
         )
       ) }, void 0, false, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 55,
+        lineNumber: 56,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:flex-1 lg:justify-end", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 68, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenu, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 69, children: [
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuTrigger, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 70, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Button, { variant: "ghost", size: "sm", className: "gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 71, children: [
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(User, { className: "h-4 w-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 72 }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 72,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 73, children: "Candidate" }, void 0, false, {
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "hidden lg:flex lg:flex-1 lg:justify-end lg:gap-2 lg:items-center", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 69, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(AIChat, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 70 }, void 0, false, {
+          fileName: "/app/src/layouts/parts/Header.tsx",
+          lineNumber: 70,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenu, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 71, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuTrigger, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 72, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Button, { variant: "ghost", size: "sm", className: "gap-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 73, children: [
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(User, { className: "h-4 w-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 74 }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 74,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("span", { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 75, children: "Candidate" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 75,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
             fileName: "/app/src/layouts/parts/Header.tsx",
             lineNumber: 73,
-            columnNumber: 17
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "/app/src/layouts/parts/Header.tsx",
+            lineNumber: 72,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuContent, { align: "end", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 78, children: [
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuLabel, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 79, children: "candidate@example.com" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 79,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 80 }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 80,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 81, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/dashboard", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 82, children: "Dashboard" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 82,
+              columnNumber: 17
+            }, this) }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 81,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 84, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/progress", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 85, children: "Progress" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 85,
+              columnNumber: 17
+            }, this) }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 84,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 87 }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 87,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 88, children: "Sign out" }, void 0, false, {
+              fileName: "/app/src/layouts/parts/Header.tsx",
+              lineNumber: 88,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "/app/src/layouts/parts/Header.tsx",
+            lineNumber: 78,
+            columnNumber: 13
           }, this)
         ] }, void 0, true, {
           fileName: "/app/src/layouts/parts/Header.tsx",
           lineNumber: 71,
-          columnNumber: 15
-        }, this) }, void 0, false, {
-          fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 70,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuContent, { align: "end", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 76, children: [
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuLabel, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 77, children: "candidate@example.com" }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 77,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 78 }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 78,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 79, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/dashboard", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 80, children: "Dashboard" }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 80,
-            columnNumber: 17
-          }, this) }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 79,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { asChild: true, "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 82, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(Link, { to: "/progress", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 83, children: "Progress" }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 83,
-            columnNumber: 17
-          }, this) }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 82,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuSeparator, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 85 }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 85,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(DropdownMenuItem, { "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 86, children: "Sign out" }, void 0, false, {
-            fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 86,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 76,
-          columnNumber: 13
+          columnNumber: 11
         }, this)
       ] }, void 0, true, {
         fileName: "/app/src/layouts/parts/Header.tsx",
         lineNumber: 69,
-        columnNumber: 11
-      }, this) }, void 0, false, {
-        fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 68,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 7
     }, this),
-    mobileMenuOpen && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 94, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "space-y-1 px-4 pb-3 pt-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 95, children: [
+    mobileMenuOpen && /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "lg:hidden", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 96, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "space-y-1 px-4 pb-3 pt-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 97, children: [
       navigation.map(
         (item) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
           Link,
@@ -660,34 +1132,34 @@ function Header() {
             className: "block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 97,
+            "data-dev-line": 99,
             children: item.name
           },
           item.name,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 97,
+            lineNumber: 99,
             columnNumber: 11
           },
           this
         )
       ),
-      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "border-t border-border pt-4 mt-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 106, children: [
-        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "px-3 py-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 107, children: [
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-sm font-medium", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 108, children: "Candidate" }, void 0, false, {
+      /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "border-t border-border pt-4 mt-4", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 108, children: [
+        /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "px-3 py-2", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 109, children: [
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-sm font-medium", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 110, children: "Candidate" }, void 0, false, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 108,
+            lineNumber: 110,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-xs text-muted-foreground", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 109, children: "candidate@example.com" }, void 0, false, {
+          /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("p", { className: "text-xs text-muted-foreground", "data-dev-file": "/app/src/layouts/parts/Header.tsx", "data-dev-line": 111, children: "candidate@example.com" }, void 0, false, {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 109,
+            lineNumber: 111,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "/app/src/layouts/parts/Header.tsx",
-          lineNumber: 107,
+          lineNumber: 109,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
@@ -697,14 +1169,14 @@ function Header() {
             className: "block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 111,
+            "data-dev-line": 113,
             children: "Dashboard"
           },
           void 0,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 111,
+            lineNumber: 113,
             columnNumber: 15
           },
           this
@@ -715,35 +1187,35 @@ function Header() {
             className: "block w-full text-left rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
             onClick: () => setMobileMenuOpen(false),
             "data-dev-file": "/app/src/layouts/parts/Header.tsx",
-            "data-dev-line": 118,
+            "data-dev-line": 120,
             children: "Sign out"
           },
           void 0,
           false,
           {
             fileName: "/app/src/layouts/parts/Header.tsx",
-            lineNumber: 118,
+            lineNumber: 120,
             columnNumber: 15
           },
           this
         )
       ] }, void 0, true, {
         fileName: "/app/src/layouts/parts/Header.tsx",
-        lineNumber: 106,
+        lineNumber: 108,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 95,
+      lineNumber: 97,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "/app/src/layouts/parts/Header.tsx",
-      lineNumber: 94,
+      lineNumber: 96,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "/app/src/layouts/parts/Header.tsx",
-    lineNumber: 29,
+    lineNumber: 30,
     columnNumber: 5
   }, this);
 }
@@ -782,7 +1254,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-CH0QULx4.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-rDfKceTh.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -840,115 +1312,6 @@ function RootLayout({ children }) {
     columnNumber: 5
   }, this);
 }
-const Card = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
-    "div",
-    {
-      ref,
-      className: cn(
-        "rounded-lg border bg-card text-card-foreground shadow-sm",
-        className
-      ),
-      ...props
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/src/components/ui/card.tsx",
-      lineNumber: 9,
-      columnNumber: 3
-    },
-    void 0
-  )
-);
-Card.displayName = "Card";
-const CardHeader = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
-    "div",
-    {
-      ref,
-      className: cn("flex flex-col space-y-1.5 p-6", className),
-      ...props
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/src/components/ui/card.tsx",
-      lineNumber: 24,
-      columnNumber: 3
-    },
-    void 0
-  )
-);
-CardHeader.displayName = "CardHeader";
-const CardTitle = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
-    "div",
-    {
-      ref,
-      className: cn(
-        "text-2xl font-semibold leading-none tracking-tight",
-        className
-      ),
-      ...props
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/src/components/ui/card.tsx",
-      lineNumber: 36,
-      columnNumber: 3
-    },
-    void 0
-  )
-);
-CardTitle.displayName = "CardTitle";
-const CardDescription = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
-    "div",
-    {
-      ref,
-      className: cn("text-sm text-muted-foreground", className),
-      ...props
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/src/components/ui/card.tsx",
-      lineNumber: 51,
-      columnNumber: 3
-    },
-    void 0
-  )
-);
-CardDescription.displayName = "CardDescription";
-const CardContent = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { ref, className: cn("p-6 pt-0", className), ...props }, void 0, false, {
-    fileName: "/app/src/components/ui/card.tsx",
-    lineNumber: 63,
-    columnNumber: 3
-  }, void 0)
-);
-CardContent.displayName = "CardContent";
-const CardFooter = reactExports.forwardRef(
-  ({ className, ...props }, ref) => /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(
-    "div",
-    {
-      ref,
-      className: cn("flex items-center p-6 pt-0", className),
-      ...props
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/src/components/ui/card.tsx",
-      lineNumber: 71,
-      columnNumber: 3
-    },
-    void 0
-  )
-);
-CardFooter.displayName = "CardFooter";
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
@@ -1408,14 +1771,14 @@ function HomePage() {
     columnNumber: 5
   }, this);
 }
-const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-Bo-oUTJS.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
-const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-Dn341Wy_.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
-const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-CGKbl7Yh.js"), true ? __vite__mapDeps([5,1,2]) : void 0));
-const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-CWiSa9Cb.js"), true ? __vite__mapDeps([6,1,2]) : void 0));
-const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-DQtzFMJ7.js"), true ? __vite__mapDeps([7,1,2]) : void 0));
-const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-OtBSzo1b.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
-const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-DgGOJRNw.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
-const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-sC8bmGqP.js"), true ? __vite__mapDeps([10,1,2]) : void 0));
+const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-Dr1hsJXM.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
+const DashboardPage = reactExports.lazy(() => __vitePreload(() => import("./dashboard-CAACzkw3.js"), true ? __vite__mapDeps([4,1,2]) : void 0));
+const SimulatorLivePage = reactExports.lazy(() => __vitePreload(() => import("./simulator-live-BxhMA0aq.js"), true ? __vite__mapDeps([5,1,2]) : void 0));
+const AICoachPage = reactExports.lazy(() => __vitePreload(() => import("./ai-coach-Iepuo6Lu.js"), true ? __vite__mapDeps([6,1,2]) : void 0));
+const InterviewPrepPage = reactExports.lazy(() => __vitePreload(() => import("./interview-prep-DDMdmBhu.js"), true ? __vite__mapDeps([7,1,2]) : void 0));
+const ExercisesPage = reactExports.lazy(() => __vitePreload(() => import("./exercises-G6m7yVt_.js"), true ? __vite__mapDeps([8,1,2]) : void 0));
+const ProgressPage = reactExports.lazy(() => __vitePreload(() => import("./progress-CuhBcuNX.js"), true ? __vite__mapDeps([9,1,2]) : void 0));
+const BehavioralMetricsPage = reactExports.lazy(() => __vitePreload(() => import("./behavioral-metrics-Bz-TWnCE.js"), true ? __vite__mapDeps([10,1,2]) : void 0));
 const routes = [
   {
     path: "/",

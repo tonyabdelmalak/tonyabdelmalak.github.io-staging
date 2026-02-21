@@ -1,4 +1,4 @@
-import { j as jsxDevRuntimeExports } from "./vendor-Db6UC8BF.js";
+import { j as jsxDevRuntimeExports } from "./vendor-sVUzmLDa.js";
 import "./preload-DYXzOcNn.js";
 function ExercisesPage() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(jsxDevRuntimeExports.Fragment, { children: [
