@@ -57,8 +57,8 @@ export default defineConfig(({ mode }) => ({
 		strictPort: !!process.env.PORT,
 		allowedHosts,
 		cors: {
-			origin: allowedHosts,
-			credentials: true,
+			origin: '*', // Allow all origins for GitHub Pages
+			credentials: false,
 			methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 			allowedHeaders: ["Content-Type", "Authorization", "Accept", "User-Agent"],
 		},
