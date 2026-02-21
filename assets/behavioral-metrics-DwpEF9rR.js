@@ -1,4 +1,4 @@
-import { j as jsxDevRuntimeExports } from "./vendor-sVUzmLDa.js";
+import { j as jsxDevRuntimeExports } from "./vendor-CuCSxqBp.js";
 import "./preload-DYXzOcNn.js";
 function BehavioralMetricsPage() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(jsxDevRuntimeExports.Fragment, { children: [
