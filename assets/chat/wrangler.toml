@@ -1,0 +1,39 @@
+name = "tony-agent"
+main = "chat-widget/worker.js"
+compatibility_date = "2025-01-01"
+
+# Defaults used if an env value isn't specified
+[vars]
+USE_KEYWORD_FILTER = "true"
+
+# ---------- STAGING (Reflectiv) ----------
+[env.staging]
+vars = {
+  # Files hosted by your staging site (Project Pages URL)
+  PERSONA_URL   = "https://tonyabdelmalak.github.io/tonyabdelmalak.github.io-staging/assets/chat/persona.json",
+  KNOWLEDGE_URL = "https://tonyabdelmalak.github.io/tonyabdelmalak.github.io-staging/assets/chat/knowledge/about-tony.md",
+
+  # CORS: the origin is just the domain (path doesn’t matter)
+  ALLOWED_ORIGINS = "https://tonyabdelmalak.github.io",
+
+  GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
+  GROQ_MODEL = "llama-3.1-70b-versatile",
+  USE_KEYWORD_FILTER = "true"
+}
+
+# ---------- PRODUCTION (Main site) ----------
+[env.production]
+vars = {
+  # Public URLs to persona/knowledge hosted on your main GitHub Pages site
+  PERSONA_URL   = "https://tonyabdelmalak.github.io/assets/chat/persona.json",
+  KNOWLEDGE_URL = "https://tonyabdelmalak.github.io/assets/chat/knowledge/about-tony.md",
+
+  # CORS: only allow your main site origin
+  ALLOWED_ORIGINS = "https://tonyabdelmalak.github.io",
+
+  # Groq API settings (production model you’re using today)
+  GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions",
+  GROQ_MODEL = "llama-3.1-8b-instant"
+}
+# Set the prod secret OUTSIDE this file:
+#   wrangler secret put GROQ

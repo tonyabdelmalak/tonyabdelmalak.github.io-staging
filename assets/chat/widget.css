@@ -1,0 +1,122 @@
+:root {
+  --tcw-accent: #4f46e5;
+  --tcw-radius: 12px;
+}
+
+.tcw-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-image: url('/assets/img/profile-img.jpg');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.tcw-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 480px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.tcw-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: var(--tcw-accent);
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tcw-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.tcw-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tcw-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tcw-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.tcw-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.tcw-msg {
+  margin-bottom: 8px;
+}
+
+.tcw-msg strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tcw-inputbar {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.tcw-inputbar textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.tcw-inputbar button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: var(--tcw-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tcw-typing {
+  font-style: italic;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.tcw-greeting {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
