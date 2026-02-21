@@ -62,10 +62,31 @@ export default function ExercisesPage() {
   const loadCategories = async () => {
     try {
       const response = await fetch('/api/questions/categories');
+      if (!response.ok) {
+        // Use fallback categories if API fails
+        setCategories([
+          { id: 1, name: 'Behavioral', description: 'Behavioral interview questions', icon: 'Users' },
+          { id: 2, name: 'Technical', description: 'Technical interview questions', icon: 'Code' },
+          { id: 3, name: 'Problem Solving', description: 'Problem-solving questions', icon: 'Lightbulb' },
+          { id: 4, name: 'Leadership', description: 'Leadership questions', icon: 'Crown' },
+          { id: 5, name: 'Situational', description: 'Situational questions', icon: 'Brain' },
+          { id: 6, name: 'Communication', description: 'Communication questions', icon: 'MessageSquare' },
+        ]);
+        return;
+      }
       const data = await response.json();
-      setCategories(data.categories);
+      setCategories(data.categories || []);
     } catch (error) {
       console.error('Failed to load categories:', error);
+      // Use fallback categories
+      setCategories([
+        { id: 1, name: 'Behavioral', description: 'Behavioral interview questions', icon: 'Users' },
+        { id: 2, name: 'Technical', description: 'Technical interview questions', icon: 'Code' },
+        { id: 3, name: 'Problem Solving', description: 'Problem-solving questions', icon: 'Lightbulb' },
+        { id: 4, name: 'Leadership', description: 'Leadership questions', icon: 'Crown' },
+        { id: 5, name: 'Situational', description: 'Situational questions', icon: 'Brain' },
+        { id: 6, name: 'Communication', description: 'Communication questions', icon: 'MessageSquare' },
+      ]);
     }
   };
 
