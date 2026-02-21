@@ -1,4 +1,4 @@
-import { L as Link$1, j as jsxDevRuntimeExports } from "./vendor-oqWa4CdQ.js";
+import { L as Link$1, j as jsxDevRuntimeExports } from "./vendor-Db6UC8BF.js";
 import "./preload-DYXzOcNn.js";
 const Link = Link$1;
 function NotFoundPage() {

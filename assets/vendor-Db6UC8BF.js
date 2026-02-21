@@ -30005,7 +30005,7 @@ function createBrowserRouter(routes, opts) {
     getContext: opts == null ? void 0 : opts.getContext,
     future: opts == null ? void 0 : opts.future,
     history: createBrowserHistory({ window: opts == null ? void 0 : opts.window }),
-    hydrationData: parseHydrationData(),
+    hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
     routes,
     mapRouteProperties,
     hydrationRouteProperties,

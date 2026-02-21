@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-Cd3pjvNU.js","assets/vendor-oqWa4CdQ.js","assets/preload-DYXzOcNn.js","assets/_404-D9HTtsan.js"])))=>i.map(i=>d[i]);
-import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, b as SubTrigger2, C as ChevronRight, d as SubContent2, P as Portal2, e as Content2, I as Item2, f as CheckboxItem2, g as ItemIndicator2, h as Check, R as RadioItem2, i as Circle, k as Label2, l as Separator2, m as Root2, T as Trigger, X, n as Menu, U as User, A as ArrowRight, B as Brain, o as Target, Z as Zap, p as Award, q as createBrowserRouter, s as RouterProvider2, O as Outlet, Q as QueryClient, u as ReactDOM, v as React, w as QueryClientProvider } from "./vendor-oqWa4CdQ.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/CookieBanner-DIYm0339.js","assets/vendor-Db6UC8BF.js","assets/preload-DYXzOcNn.js","assets/_404-Bo-oUTJS.js"])))=>i.map(i=>d[i]);
+import { j as jsxDevRuntimeExports, L as Link, M as Mail, t as twMerge, c as clsx, r as reactExports, S as Slot, a as cva, b as SubTrigger2, C as ChevronRight, d as SubContent2, P as Portal2, e as Content2, I as Item2, f as CheckboxItem2, g as ItemIndicator2, h as Check, R as RadioItem2, i as Circle, k as Label2, l as Separator2, m as Root2, T as Trigger, X, n as Menu, U as User, A as ArrowRight, B as Brain, o as Target, Z as Zap, p as Award, q as createBrowserRouter, s as RouterProvider2, O as Outlet, Q as QueryClient, u as ReactDOM, v as React, w as QueryClientProvider } from "./vendor-Db6UC8BF.js";
 import { _ as __vitePreload } from "./preload-DYXzOcNn.js";
 function Footer() {
   return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("footer", { className: "border-t bg-muted/30", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 6, children: /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12", "data-dev-file": "/app/src/layouts/parts/Footer.tsx", "data-dev-line": 7, children: [
@@ -782,7 +782,7 @@ function Website({
   }, this);
 }
 const CookieBanner = reactExports.lazy(
-  () => __vitePreload(() => import("./CookieBanner-Cd3pjvNU.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
+  () => __vitePreload(() => import("./CookieBanner-DIYm0339.js"), true ? __vite__mapDeps([0,1,2]) : void 0).catch((error) => {
     console.warn("Failed to load CookieBanner:", error);
     return {
       default: () => null
@@ -1408,7 +1408,7 @@ function HomePage() {
     columnNumber: 5
   }, this);
 }
-const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-D9HTtsan.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
+const NotFoundPage = reactExports.lazy(() => __vitePreload(() => import("./_404-Bo-oUTJS.js"), true ? __vite__mapDeps([3,1,2]) : void 0));
 const routes = [
   {
     path: "/",
@@ -1525,12 +1525,15 @@ const router = createBrowserRouter(
       }, void 0),
       children: routes
     }
-  ]
+  ],
+  {
+    basename: "/tonyabdelmalak.github.io-staging/"
+  }
 );
 function App() {
-  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RouterProvider2, { router, "data-dev-file": "/app/src/App.tsx", "data-dev-line": 38 }, void 0, false, {
+  return /* @__PURE__ */ jsxDevRuntimeExports.jsxDEV(RouterProvider2, { router, "data-dev-file": "/app/src/App.tsx", "data-dev-line": 40 }, void 0, false, {
     fileName: "/app/src/App.tsx",
-    lineNumber: 38,
+    lineNumber: 40,
     columnNumber: 10
   }, this);
 }
