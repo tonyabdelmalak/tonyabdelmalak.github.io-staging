@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import { db } from '../../db/client.js';
-import { questions, questionCategories } from '../../db/schema.js';
+import { questions } from '../../db/schema.js';
 import { eq, and } from 'drizzle-orm';
 
 export default async function handler(req: Request, res: Response) {

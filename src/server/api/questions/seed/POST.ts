@@ -20,7 +20,7 @@ export default async function handler(req: Request, res: Response) {
       { name: 'Communication', description: 'Communication and interpersonal skills', icon: 'MessageSquare' },
     ];
 
-    const insertedCategories = await db.insert(questionCategories).values(categoryData);
+    await db.insert(questionCategories).values(categoryData);
     const categoryIds = await db.select().from(questionCategories);
 
     // Seed questions
