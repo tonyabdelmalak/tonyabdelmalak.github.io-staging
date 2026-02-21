@@ -4,6 +4,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import App from './App';
 import './styles/globals.css';
 
+// Handle GitHub Pages SPA redirect
+const redirect = sessionStorage.getItem('redirect');
+if (redirect) {
+  sessionStorage.removeItem('redirect');
+  history.replaceState(null, '', redirect);
+}
+
 // Add robots meta tag only in development mode
 if (import.meta.env.MODE === 'development') {
   const meta = document.createElement('meta');
