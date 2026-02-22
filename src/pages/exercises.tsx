@@ -62,7 +62,7 @@ export default function ExercisesPage() {
 
   const loadCategories = async () => {
     try {
-      const response = await fetch(`${API_BASE}/questions/categories');
+      const response = await fetch(`${API_BASE}/questions/categories`);
       if (!response.ok) {
         // Use fallback categories if API fails
         setCategories([
@@ -306,7 +306,7 @@ export default function ExercisesPage() {
 
     setAnalyzingAnswer(true);
     try {
-      const response = await fetch(`${API_BASE}/chat', {
+      const response = await fetch(`${API_BASE}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

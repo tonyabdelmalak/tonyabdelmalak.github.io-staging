@@ -61,7 +61,7 @@ export default function ResumeBuilderPage() {
 
   const loadResumes = async () => {
     try {
-      const response = await fetch(`${API_BASE}/resumes');
+      const response = await fetch(`${API_BASE}/resumes`);
       if (response.ok) {
         const data = await response.json();
         setResumes(data.resumes || []);
@@ -136,7 +136,7 @@ export default function ResumeBuilderPage() {
     setIsOptimizing(true);
     setMessage(null);
     try {
-      const response = await fetch(`${API_BASE}/resumes/optimize', {
+      const response = await fetch(`${API_BASE}/resumes/optimize`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
