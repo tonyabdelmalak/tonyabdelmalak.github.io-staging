@@ -22,39 +22,39 @@ export default {
 
     try {
       // Route handlers
-      if (path === '/api/health') {
+      if (path === '/health') {
         return jsonResponse({ status: 'ok', timestamp: new Date().toISOString() }, corsHeaders);
       }
 
       // Chat endpoint
-      if (path === '/api/chat' && request.method === 'POST') {
+      if (path === '/chat' && request.method === 'POST') {
         return handleChat(request, env, corsHeaders);
       }
 
       // Questions endpoints
-      if (path === '/api/questions' && request.method === 'GET') {
+      if (path === '/questions' && request.method === 'GET') {
         return handleGetQuestions(request, env, corsHeaders);
       }
 
-      if (path === '/api/questions/categories' && request.method === 'GET') {
+      if (path === '/questions/categories' && request.method === 'GET') {
         return handleGetCategories(env, corsHeaders);
       }
 
-      if (path === '/api/questions/seed' && request.method === 'POST') {
+      if (path === '/questions/seed' && request.method === 'POST') {
         return handleSeedQuestions(env, corsHeaders);
       }
 
       // Sessions endpoint
-      if (path === '/api/sessions' && request.method === 'POST') {
+      if (path === '/sessions' && request.method === 'POST') {
         return handleCreateSession(request, env, corsHeaders);
       }
 
       // Resumes endpoints
-      if (path === '/api/resumes' && request.method === 'GET') {
+      if (path === '/resumes' && request.method === 'GET') {
         return handleGetResumes(env, corsHeaders);
       }
 
-      if (path === '/api/resumes' && request.method === 'POST') {
+      if (path === '/resumes' && request.method === 'POST') {
         return handleCreateResume(request, env, corsHeaders);
       }
 
@@ -68,11 +68,11 @@ export default {
         return handleDeleteResume(id, env, corsHeaders);
       }
 
-      if (path === '/api/resumes/optimize' && request.method === 'POST') {
+      if (path === '/resumes/optimize' && request.method === 'POST') {
         return handleOptimizeResume(request, env, corsHeaders);
       }
 
-      if (path === '/api/resumes/analyze-alignment' && request.method === 'POST') {
+      if (path === '/resumes/analyze-alignment' && request.method === 'POST') {
         return handleAnalyzeAlignment(request, env, corsHeaders);
       }
 

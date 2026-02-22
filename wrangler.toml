@@ -1,4 +1,4 @@
-name = "interview-intelligence-api"
+name = "interview-master-worker"
 main = "worker-api.js"
 compatibility_date = "2025-01-01"
 
