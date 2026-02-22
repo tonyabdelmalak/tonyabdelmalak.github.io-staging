@@ -1,4 +1,5 @@
 name = "interview-master-worker"
+account_id = "59fea97fab54fbd4d4168ccaa1fa3410"
 main = "worker-api.js"
 compatibility_date = "2025-01-01"
 
