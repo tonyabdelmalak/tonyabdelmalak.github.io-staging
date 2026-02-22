@@ -1,3 +1,4 @@
+import { API_BASE } from '@/lib/api-client';
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -216,7 +217,7 @@ export default function SimulatorLivePage() {
 
     try {
       // Get AI feedback
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_BASE}/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -268,7 +269,7 @@ export default function SimulatorLivePage() {
       const totalDuration = completedQuestions.reduce((sum, q) => sum + q.duration, 0);
       const avgScore = 75; // Placeholder - would calculate from AI feedback
 
-      await fetch('/api/sessions', {
+      await fetch(`${API_BASE}/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

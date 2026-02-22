@@ -1,6 +1,6 @@
-// API client for communicating with vite-plugin-api endpoints
+// API client for communicating with backend API
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 export async function checkHealth() {
   const response = await fetch(`${API_BASE}/health`);
@@ -9,3 +9,5 @@ export async function checkHealth() {
   }
   return response.json();
 }
+
+export { API_BASE };

@@ -1,3 +1,4 @@
+import { API_BASE } from '@/lib/api-client';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -61,7 +62,7 @@ export default function ExercisesPage() {
 
   const loadCategories = async () => {
     try {
-      const response = await fetch('/api/questions/categories');
+      const response = await fetch(`${API_BASE}/questions/categories');
       if (!response.ok) {
         // Use fallback categories if API fails
         setCategories([
@@ -98,7 +99,7 @@ export default function ExercisesPage() {
       if (selectedCategory !== 'all') params.append('category', selectedCategory);
       if (selectedDifficulty !== 'all') params.append('difficulty', selectedDifficulty);
       
-      const response = await fetch(`/api/questions?${params.toString()}`);
+      const response = await fetch(`${API_BASE}/questions?${params.toString()}`);
       
       if (!response.ok) {
         // Use fallback data if API fails
@@ -305,7 +306,7 @@ export default function ExercisesPage() {
 
     setAnalyzingAnswer(true);
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_BASE}/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
