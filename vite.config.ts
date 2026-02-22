@@ -25,6 +25,14 @@ if (allowedHosts.length === 0) {
 }
 
 export default defineConfig(({ mode }) => ({
+	
+	// Explicitly define environment variables for production builds
+	define: {
+		'import.meta.env.VITE_API_BASE_URL': JSON.stringify(
+			process.env.VITE_API_BASE_URL || '/api'
+		),
+	},
+	
 	base: '/tonyabdelmalak.github.io-staging/',
 	plugins: [
 		react({
