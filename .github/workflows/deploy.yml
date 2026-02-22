@@ -33,6 +33,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+          VITE_API_BASE_URL: https://interview-master-worker.tonyabdelmalak.workers.dev
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
